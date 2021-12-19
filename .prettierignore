@@ -10,3 +10,5 @@ api/_build
 package-lock.json
 README.md
 remix.env.d.ts
+
+app/styles

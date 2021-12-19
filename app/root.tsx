@@ -1,8 +1,14 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
-import type { MetaFunction } from 'remix';
+import type { MetaFunction, LinksFunction } from 'remix';
+
+import reset from './styles/reset.css';
 
 export const meta: MetaFunction = () => {
-  return { title: 'New Remix App' };
+  return { title: 'Alexandre Lim' };
+};
+
+export const links: LinksFunction = () => {
+  return [{ rel: 'stylesheet', href: reset }];
 };
 
 export default function App() {
