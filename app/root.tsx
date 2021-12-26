@@ -1,14 +1,24 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
 
-import reset from './styles/reset.css';
+import resetStylesUrl from './styles/reset.css';
+import appStylesUrl from './styles/app.css';
+import darkStylesUrl from './styles/dark.css';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
 };
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: reset }];
+  return [
+    { rel: 'stylesheet', href: resetStylesUrl },
+    { rel: 'stylesheet', href: appStylesUrl },
+    {
+      rel: 'stylesheet',
+      href: darkStylesUrl,
+      media: '(prefers-color-scheme: dark)',
+    },
+  ];
 };
 
 export default function App() {
