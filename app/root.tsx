@@ -1,9 +1,10 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
 
-import resetStylesUrl from './styles/reset.css';
-import appStylesUrl from './styles/app.css';
-import darkStylesUrl from './styles/dark.css';
+import tailwindStyles from './styles/tailwind.css';
+import resetStyles from './styles/reset.css';
+import appStyles from './styles/app.css';
+import darkStyles from './styles/dark.css';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
@@ -11,11 +12,12 @@ export const meta: MetaFunction = () => {
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: resetStylesUrl },
-    { rel: 'stylesheet', href: appStylesUrl },
+    { rel: 'stylesheet', href: tailwindStyles },
+    { rel: 'stylesheet', href: resetStyles },
+    { rel: 'stylesheet', href: appStyles },
     {
       rel: 'stylesheet',
-      href: darkStylesUrl,
+      href: darkStyles,
       media: '(prefers-color-scheme: dark)',
     },
   ];
