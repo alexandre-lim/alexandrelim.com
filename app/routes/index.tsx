@@ -20,7 +20,7 @@ export default function Index() {
         </div>
       </section>
       <section>
-        <h2 className="mb-2 text-xl">More than a job title</h2>
+        <h2 className="mb-2 text-2xl">More than a job title</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -33,7 +33,7 @@ export default function Index() {
         </div>
       </section>
       <section>
-        <h2 className="mb-2 text-xl">Recent articles</h2>
+        <h2 className="mb-2 text-2xl">Recent articles</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -46,7 +46,7 @@ export default function Index() {
         </div>
       </section>
       <section>
-        <h2 className="mb-2 text-xl">Always learning</h2>
+        <h2 className="mb-2 text-2xl">Always learning</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

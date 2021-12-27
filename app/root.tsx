@@ -58,7 +58,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div id="root" className="flex flex-col min-h-full">
       <header className="max-width-wrapper mt-12 flex items-center justify-between h-16">
-        <Link to={ROUTES.home} title="Home">
+        <Link to={ROUTES.home} title="Home" className="text-2xl">
           <h1>Alexandre Lim</h1>
         </Link>
         <nav aria-label="Main navigation">
