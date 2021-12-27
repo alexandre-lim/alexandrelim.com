@@ -1,7 +1,6 @@
 :root {
   --color-foreground: hsl(0, 0%, 7%);
   --color-background: hsl(0, 0%, 100%);
-  --color-links: hsl(213, 100%, 52%);
   --color-links-hover: hsl(213, 100%, 43%);
   --color-border: hsl(0, 0%, 82%);
   --font-body: -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto, Arial, sans-serif, system-ui,
@@ -22,11 +21,6 @@ body {
 
 body {
   font-family: var(--font-body);
-}
-
-a {
-  color: var(--color-links);
-  text-decoration: none;
 }
 
 a:hover {
