@@ -1,26 +1,29 @@
 import { Link } from 'remix';
 import { ROUTES } from '~/routes';
 
+import * as AspectRatio from '@radix-ui/react-aspect-ratio';
+
 export default function Index() {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-16">
       <section className="flex flex-col">
         <h2 className="self-center max-w-lg leading-tight text-3xl md:text-4xl text-black dark:text-white">
-          Big Title
+          Learn&nbsp;Practice&nbsp;Give
         </h2>
-        <p className="mt-6">
+        <p className="mt-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
         </p>
-        <div className="mt-3">
-          <Link to={ROUTES.experience}>Know more about my experience</Link>
+        <div className="mt-4">
+          <Link to={ROUTES.experience}>See my journey</Link>
         </div>
       </section>
+
       <section>
-        <h2 className="mb-2 text-2xl">More than a job title</h2>
+        <h2 className="mb-8 text-xl md:text-2xl">More than a job title</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -28,34 +31,100 @@ export default function Index() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
         </p>
-        <div className="mt-3">
-          <Link to={ROUTES.about}>Learn more about me</Link>
+        <div className="mt-4">
+          <Link to={ROUTES.about}>About me</Link>
         </div>
       </section>
+
       <section>
-        <h2 className="mb-2 text-2xl">Recent articles</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </p>
-        <div className="mt-3">
-          <Link to={ROUTES.blog}>See all articles</Link>
+        <div className="flex justify-between items-baseline">
+          <h2 className="mb-8 text-xl md:text-2xl">Newest articles</h2>
+          <Link to={ROUTES.blog}>See the blog</Link>
+        </div>
+
+        <div className="flex gap-8 flex-wrap md:flex-nowrap">
+          <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
+            <Link to={ROUTES.blog} className="block h-full p-8">
+              <h3>Title Article</h3>
+              <div className="my-4">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </p>
+              </div>
+              <div>Read More</div>
+            </Link>
+          </article>
+
+          <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
+            <Link to={ROUTES.blog} className="block h-full p-8">
+              <h3>Title Article</h3>
+              <div className="my-4">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+              <div>Read More</div>
+            </Link>
+          </article>
         </div>
       </section>
+
       <section>
-        <h2 className="mb-2 text-2xl">Always learning</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </p>
-        <div className="mt-3">
-          <Link to={ROUTES.growth}>See how I invest in myself</Link>
+        <div className="flex justify-between items-baseline">
+          <h2 className="mb-8 text-xl md:text-2xl">Always learning</h2>
+          <Link to={ROUTES.growth}>See all</Link>
+        </div>
+
+        <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
+          <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
+            <Link to={ROUTES.growth} className="block h-full">
+              <AspectRatio.Root ratio={16 / 9}>
+                <img
+                  className="object-cover w-full h-full"
+                  src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
+                  alt="Landscape photo by Tobias Tullius"
+                />
+              </AspectRatio.Root>
+
+              <div className="p-8">
+                <h3>Title Certificate</h3>
+                <p className="my-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </Link>
+          </article>
+
+          <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
+            <Link to={ROUTES.growth} className="block h-full">
+              <AspectRatio.Root ratio={16 / 9}>
+                <img
+                  className="object-cover w-full h-full"
+                  src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
+                  alt="Landscape photo by Tobias Tullius"
+                />
+              </AspectRatio.Root>
+
+              <div className="p-8">
+                <h3>Title Certificate</h3>
+                <p className="my-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </Link>
+          </article>
         </div>
       </section>
     </div>
