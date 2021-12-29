@@ -1,6 +1,7 @@
 import { Link } from 'remix';
 import { ROUTES } from '~/routes';
 
+import * as Avatar from '@radix-ui/react-avatar';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 export default function Index() {
@@ -24,6 +25,14 @@ export default function Index() {
 
       <section>
         <h2 className="mb-8 text-xl md:text-2xl">More than a job title</h2>
+        <div className="flex justify-center mb-4">
+          <Avatar.Root className="flex items-center justify-center mx-auto overflow-hidden select-none w-20 h-20 rounded-full bg-black bg-opacity-5">
+            <Avatar.Image className="w-full h-full object-cover" src="" alt="" />
+            <Avatar.Fallback className="text-indigo-500" delayMs={600}>
+              AL
+            </Avatar.Fallback>
+          </Avatar.Root>
+        </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
