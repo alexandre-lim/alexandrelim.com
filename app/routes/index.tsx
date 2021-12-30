@@ -6,7 +6,7 @@ import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 export default function Index() {
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-16 max-w-2xl mx-auto">
       <section className="flex flex-col">
         <h2 className="self-center max-w-lg leading-tight text-3xl md:text-4xl text-black dark:text-white">
           Learn&nbsp;Practice&nbsp;Give

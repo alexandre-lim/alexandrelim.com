@@ -7,7 +7,7 @@ import { techStackTagValues } from '~/utils/tech-stack-tags';
 export default function Index() {
   return (
     <>
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-16 max-w-2xl mx-auto">
         <section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

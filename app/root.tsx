@@ -78,9 +78,7 @@ function Layout({ children }: { children: React.ReactNode }) {
           </ul>
         </nav>
       </header>
-      <main className="max-width-wrapper my-12">
-        <div className="max-w-2xl mx-auto">{children}</div>
-      </main>
+      <main className="max-width-wrapper my-12">{children}</main>
       <footer className="mt-auto p-4 border border-solid border-zinc-300">
         <div className="text-center">
           <p className="text-xs">© 2022-present Alexandre Lim. All Rights Reserved.</p>
