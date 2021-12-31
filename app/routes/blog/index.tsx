@@ -15,8 +15,8 @@ export default function Index() {
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
           <article className="border rounded-lg shadow-md">
-            <Link to={ROUTES.blog} className="block h-full p-8">
-              <h3>Title Article</h3>
+            <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
+              <h3>Article title</h3>
               <div className="my-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -29,8 +29,8 @@ export default function Index() {
           </article>
 
           <article className="border rounded-lg shadow-md">
-            <Link to={ROUTES.blog} className="block h-full p-8">
-              <h3>Title Article</h3>
+            <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
+              <h3>Article title</h3>
               <div className="my-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -45,8 +45,8 @@ export default function Index() {
           </article>
 
           <article className="border rounded-lg shadow-md">
-            <Link to={ROUTES.blog} className="block h-full p-8">
-              <h3>Title Article</h3>
+            <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
+              <h3>Article title</h3>
               <div className="my-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

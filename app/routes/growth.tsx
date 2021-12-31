@@ -133,7 +133,7 @@ export default function Index() {
 
           <div className="flex gap-8 flex-wrap md:flex-nowrap">
             <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
-              <Link to={ROUTES.blog} className="block h-full p-8">
+              <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
                 <h3>Title Article</h3>
                 <div className="my-4">
                   <p>
@@ -147,7 +147,7 @@ export default function Index() {
             </article>
 
             <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
-              <Link to={ROUTES.blog} className="block h-full p-8">
+              <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
                 <h3>Title Article</h3>
                 <div className="my-4">
                   <p>
