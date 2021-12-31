@@ -4,4 +4,5 @@ export const ROUTES = {
   experience: '/experience',
   blog: '/blog',
   growth: '/growth',
+  formations: '/formations',
 };
