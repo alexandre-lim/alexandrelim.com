@@ -3,6 +3,7 @@ import { ROUTES } from '~/routes';
 
 import * as Avatar from '@radix-ui/react-avatar';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
+import * as Separator from '@radix-ui/react-separator';
 
 export default function Index() {
   return (
@@ -54,7 +55,7 @@ export default function Index() {
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
           <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
             <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
-              <h3>Title Article</h3>
+              <h3>Article Title</h3>
               <div className="my-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -68,7 +69,7 @@ export default function Index() {
 
           <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
             <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
-              <h3>Title Article</h3>
+              <h3>Article Title</h3>
               <div className="my-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -91,7 +92,7 @@ export default function Index() {
         </div>
 
         <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
-          <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
+          <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
             <Link to={ROUTES.growth} className="block h-full">
               <AspectRatio.Root ratio={16 / 9}>
                 <img
@@ -112,18 +113,18 @@ export default function Index() {
             </Link>
           </article>
 
-          <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
-            <Link to={ROUTES.growth} className="block h-full">
-              <AspectRatio.Root ratio={16 / 9}>
+          <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
+            <Link to={`${ROUTES.books}/book-example`} className="block h-full">
+              <AspectRatio.Root ratio={16 / 9} className="py-2">
                 <img
-                  className="object-cover w-full h-full"
-                  src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                  alt="Landscape photo by Tobias Tullius"
+                  className="object-contain w-full h-full"
+                  src="https://miro.medium.com/max/1103/1*PKsDuPxNoKJyJvmlLc64qg.jpeg"
+                  alt="Clean Code by Robert C. Martin"
                 />
               </AspectRatio.Root>
-
+              <Separator.Root orientation="horizontal" className="h-px w-full bg-gray-200" />
               <div className="p-8">
-                <h3>Title Certificate</h3>
+                <h3>Clean Code by Robert C. Martin</h3>
                 <p className="my-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

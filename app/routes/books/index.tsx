@@ -15,7 +15,7 @@ export default function Books() {
 
         <div className="flex flex-col gap-8">
           <article className="w-full border overflow-hidden shadow-sm">
-            <Link to={ROUTES.growth} className="block h-full p-6">
+            <Link to={`${ROUTES.books}/book-example`} className="block h-full p-6">
               <div className="flex flex-col items-center gap-8 md:flex-row">
                 <img
                   className="object-contain w-40"
@@ -47,7 +47,7 @@ export default function Books() {
           </article>
 
           <article className="w-full border overflow-hidden shadow-sm">
-            <Link to={ROUTES.growth} className="block h-full p-6">
+            <Link to={`${ROUTES.books}/book-example`} className="block h-full p-6">
               <div className="flex flex-col items-center gap-8 md:flex-row">
                 <img
                   className="object-contain w-40"
