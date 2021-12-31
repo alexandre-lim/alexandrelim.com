@@ -32,24 +32,24 @@ export default function Index() {
           </p>
           <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
             <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
-              <Link to={ROUTES.growth} className="block h-full">
+              <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
                 <AspectRatio.Root ratio={16 / 9}>
                   <img
                     className="object-cover w-full h-full"
-                    src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                    alt="Landscape photo by Tobias Tullius"
+                    src="https://certificates.akimbo.com/img/akimbo_certificate_share.jpg"
+                    alt="The Marketing Seminar certificate"
                   />
                 </AspectRatio.Root>
 
                 <div className="flex justify-between p-8">
-                  <h3>Title Certificate</h3>
-                  <span>Author</span>
+                  <h3>The Marketing Seminar</h3>
+                  <span>Seth Godin</span>
                 </div>
               </Link>
             </article>
 
             <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
-              <Link to={ROUTES.growth} className="block h-full">
+              <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
                 <AspectRatio.Root ratio={16 / 9}>
                   <img
                     className="object-cover w-full h-full"

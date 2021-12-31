@@ -16,17 +16,17 @@ export default function Formations() {
 
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
           <article className="w-full rounded-lg overflow-hidden shadow-md">
-            <Link to={ROUTES.growth} className="block h-full">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
-                  src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                  alt="Landscape photo by Tobias Tullius"
+                  src="https://certificates.akimbo.com/img/akimbo_certificate_share.jpg"
+                  alt="The Marketing Seminar certificate"
                 />
               </AspectRatio.Root>
 
               <div className="p-8">
-                <h3>Certificate Title</h3>
+                <h3>The Marketing Seminar</h3>
                 <p className="my-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -37,7 +37,7 @@ export default function Formations() {
           </article>
 
           <article className="w-full rounded-lg overflow-hidden shadow-md">
-            <Link to={ROUTES.growth} className="block h-full">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
@@ -60,7 +60,7 @@ export default function Formations() {
           </article>
 
           <article className="w-full rounded-lg overflow-hidden shadow-md">
-            <Link to={ROUTES.growth} className="block h-full">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"

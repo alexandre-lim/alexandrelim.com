@@ -1,17 +1,17 @@
 import { Link } from 'remix';
 import { ROUTES } from '~/routes';
 
-export default function BookExample() {
+export default function FormationExample() {
   return (
     <>
       <div className="max-w-2xl mx-auto">
-        <Link className="inline-block mb-8" to={ROUTES.books}>
-          Back to books
+        <Link className="inline-block mb-8" to={ROUTES.formations}>
+          Back to formations
         </Link>
-        <h2 className="text-xl md:text-4xl font-bold text-center">Book title</h2>
+        <h2 className="text-xl md:text-4xl font-bold text-center">Formation title</h2>
 
         <article className="mt-8 flex flex-col gap-8">
-          <h3 className="text-xl md:text-2xl font-bold">Notes</h3>
+          <h3 className="text-xl md:text-2xl font-bold">What I learned</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Vulputate enim nulla aliquet porttitor. Lacus luctus accumsan tortor posuere ac ut

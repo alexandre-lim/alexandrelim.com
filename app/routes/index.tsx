@@ -93,17 +93,17 @@ export default function Index() {
 
         <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
           <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
-            <Link to={ROUTES.growth} className="block h-full">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
               <AspectRatio.Root ratio={16 / 9}>
                 <img
                   className="object-cover w-full h-full"
-                  src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                  alt="Landscape photo by Tobias Tullius"
+                  src="https://certificates.akimbo.com/img/akimbo_certificate_share.jpg"
+                  alt="The Marketing Seminar certificate"
                 />
               </AspectRatio.Root>
-
+              <Separator.Root orientation="horizontal" className="h-px w-full bg-gray-200" />
               <div className="p-8">
-                <h3>Title Certificate</h3>
+                <h3>The Marketing Seminar by&nbsp;Seth&nbsp;Godin</h3>
                 <p className="my-4">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
