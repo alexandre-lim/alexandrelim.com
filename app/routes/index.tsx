@@ -24,7 +24,7 @@ export default function Index() {
       </section>
 
       <section>
-        <h2 className="mb-8 text-xl md:text-2xl">More than a job title</h2>
+        <h2 className="mb-8 text-xl md:text-2xl font-bold">More than a job title</h2>
         <div className="flex justify-center mb-4">
           <Avatar.Root className="flex items-center justify-center mx-auto overflow-hidden select-none w-20 h-20 rounded-full bg-black bg-opacity-5">
             <Avatar.Image className="w-full h-full object-cover" src="" alt="" />
@@ -47,7 +47,7 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <h2 className="mb-8 text-xl md:text-2xl">Newest articles</h2>
+          <h2 className="mb-8 text-xl md:text-2xl font-bold">Newest articles</h2>
           <Link to={ROUTES.blog}>See the blog</Link>
         </div>
 
@@ -86,7 +86,7 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <h2 className="mb-8 text-xl md:text-2xl">Always learning</h2>
+          <h2 className="mb-8 text-xl md:text-2xl font-bold">Always learning</h2>
           <Link to={ROUTES.growth}>See all</Link>
         </div>
 

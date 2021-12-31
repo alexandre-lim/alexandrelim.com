@@ -59,7 +59,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div id="root" className="flex flex-col min-h-full">
       <header className="max-width-wrapper mt-12 flex items-center justify-between h-16">
         <Link to={ROUTES.home} title="Home" className="text-2xl">
-          <h1>Alexandre Lim</h1>
+          <h1>Alexandre&nbsp;Lim</h1>
         </Link>
         <nav aria-label="Main navigation" className="hidden md:block">
           <ul className="flex gap-8">
@@ -73,7 +73,7 @@ function Layout({ children }: { children: React.ReactNode }) {
               <Link to={ROUTES.blog}>Blog</Link>
             </li>
             <li>
-              <Link to={ROUTES.growth}>Personal Growth</Link>
+              <Link to={ROUTES.growth}>Personal&nbsp;Growth</Link>
             </li>
           </ul>
         </nav>
