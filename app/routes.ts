@@ -5,4 +5,5 @@ export const ROUTES = {
   blog: '/blog',
   growth: '/growth',
   formations: '/formations',
+  books: '/books',
 };
