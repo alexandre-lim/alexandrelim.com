@@ -7,6 +7,8 @@ import appStyles from './styles/app.css';
 import darkStyles from './styles/dark.css';
 import { ROUTES } from './routes';
 
+import { MaxWidthWrapper } from './components/MaxWidthWrapper';
+
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
 };
@@ -57,7 +59,7 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div id="root" className="flex flex-col min-h-full">
-      <header className="max-width-wrapper mt-12 flex items-center justify-between h-16">
+      <MaxWidthWrapper tag="header" className="mt-12 flex items-center justify-between h-16">
         <Link to={ROUTES.home} title="Home" className="text-2xl">
           <h1>Alexandre&nbsp;Lim</h1>
         </Link>
@@ -77,8 +79,10 @@ function Layout({ children }: { children: React.ReactNode }) {
             </li>
           </ul>
         </nav>
-      </header>
-      <main className="max-width-wrapper my-12">{children}</main>
+      </MaxWidthWrapper>
+      <MaxWidthWrapper tag="main" className="my-12">
+        {children}
+      </MaxWidthWrapper>
       <footer className="mt-auto p-4 border border-solid border-zinc-300">
         <div className="text-center">
           <p className="text-xs">© 2022-present Alexandre Lim. All Rights Reserved.</p>
