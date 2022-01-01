@@ -1,7 +1,7 @@
 import * as Separator from '@radix-ui/react-separator';
 import { TriangleRightIcon } from '@radix-ui/react-icons';
 
-import { Tag } from '~/components/tag';
+import { Tag } from '~/components/Tag';
 import { techStackTagValues } from '~/utils/tech-stack-tags';
 
 export default function Index() {
