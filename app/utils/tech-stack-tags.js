@@ -167,4 +167,124 @@ export const techStackTagValues = {
     value: 'Leaflet',
     link: '',
   },
+  symfony2: {
+    value: 'Symfony 2',
+    link: '',
+  },
+  twig: {
+    value: 'Twig',
+    link: '',
+  },
+  mariaDB: {
+    value: 'MariaDB',
+    link: '',
+  },
+  propel: {
+    value: 'Propel',
+    link: '',
+  },
+  angular1: {
+    value: 'AngularJS',
+    link: '',
+  },
+  angular2: {
+    value: 'Angular 5',
+    link: '',
+  },
+  tinyMCE: {
+    value: 'TinyMCE',
+    link: '',
+  },
+  jquery: {
+    value: 'JQuery',
+    link: '',
+  },
+  bulma: {
+    value: 'Bulma CSS',
+    link: '',
+  },
+  apache: {
+    value: 'Apache',
+    link: '',
+  },
+  ansible: {
+    value: 'Ansible',
+    link: '',
+  },
+  phpstorm: {
+    value: 'PhpStorm',
+    link: '',
+  },
+  java6: {
+    value: 'Java 6',
+    link: '',
+  },
+  java7: {
+    value: 'Java 7',
+    link: '',
+  },
+  jsp: {
+    value: 'JSP',
+    link: '',
+  },
+  stuts1: {
+    value: 'Struts 1',
+    link: '',
+  },
+  struts2: {
+    value: 'Struts 2',
+    link: '',
+  },
+  hibernate: {
+    value: 'Hibernate',
+    link: '',
+  },
+  postgreSQL: {
+    value: 'PostgreSQL',
+    link: '',
+  },
+  soap: {
+    value: 'SoapUI',
+    link: '',
+  },
+  ant: {
+    value: 'Ant',
+    link: '',
+  },
+  maven: {
+    value: 'Maven',
+    link: '',
+  },
+  tomcat: {
+    value: 'Tomcat',
+    link: '',
+  },
+  eclipse: {
+    value: 'Eclipse',
+    link: '',
+  },
+  openLayers: {
+    value: 'openLayers',
+    link: '',
+  },
+  html5: {
+    value: 'HTML5',
+    link: '',
+  },
+  css3: {
+    value: 'CSS3',
+    link: '',
+  },
+  svn: {
+    value: 'SVN',
+    link: '',
+  },
+  javaEE: {
+    value: 'Java EE',
+    link: '',
+  },
+  php: {
+    value: 'PHP',
+    link: '',
+  },
 };
