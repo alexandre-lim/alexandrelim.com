@@ -1,8 +1,18 @@
 :root {
   --color-foreground: hsl(0, 0%, 7%);
   --color-background: hsl(40, 100%, 99%);
-  --font-body: -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto, Arial, sans-serif, system-ui,
+  --font-body: 'Recursive', -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto, Arial, sans-serif, system-ui,
     'Apple Color Emoji', 'Segoe UI Emoji';
+  /* Monospace: Sans (natural-width) or Mono (fixed-width) */
+  --mono: 'MONO' 0;
+  /* Casual: Linear to Casual */
+  --casl: 'CASL' 0;
+  /* Weight: Light to ExtraBlack; usually set with `font-weight` */
+  --wght: 'wght' 400;
+  /* Slant: 0 to -15 degrees, auto cursive at -14 */
+  --slnt: 'slnt' 0;
+  /* Cursive: always roman, auto substitution, or always cursive */
+  --crsv: 'CRSV' 0.5;
 }
 
 :focus {
@@ -19,8 +29,5 @@ body {
 
 body {
   font-family: var(--font-body);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
 }

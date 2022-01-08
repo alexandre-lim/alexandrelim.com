@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <div className="flex flex-col gap-16 max-w-2xl mx-auto">
       <section className="flex flex-col">
-        <h2 className="self-center max-w-lg leading-tight text-3xl md:text-4xl text-black dark:text-white">
+        <h2 className="self-center max-w-lg leading-tight text-3xl md:text-4xl text-black dark:text-white font-recursive-casual font-recursive-bold">
           Learn&nbsp;Practice&nbsp;Give
         </h2>
         <p className="mt-8">

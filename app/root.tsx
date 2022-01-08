@@ -1,6 +1,7 @@
 import { Link, Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
 
+import fontFaceStyles from './styles/font.css';
 import tailwindStyles from './styles/tailwind.css';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
@@ -15,6 +16,7 @@ export const meta: MetaFunction = () => {
 
 export const links: LinksFunction = () => {
   return [
+    { rel: 'stylesheet', href: fontFaceStyles },
     { rel: 'stylesheet', href: tailwindStyles },
     { rel: 'stylesheet', href: resetStyles },
     { rel: 'stylesheet', href: appStyles },
