@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Recursive';
+  src: url('/fonts/recursive-variable.woff2') format('woff2 supports variations'),
+    url('/fonts/recursive-variable.woff2') format('woff2-variations');
+  font-weight: 300 800;
+  font-display: fallback;
+}
