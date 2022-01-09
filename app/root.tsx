@@ -9,6 +9,7 @@ import darkStyles from './styles/dark.css';
 import { ROUTES } from './routes';
 
 import { MaxWidthWrapper } from './components/MaxWidthWrapper';
+import { HeaderNavLink } from './components/HeaderNavLink';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
@@ -62,22 +63,26 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div id="root" className="flex flex-col min-h-full">
       <MaxWidthWrapper tag="header" className="mt-12 flex items-center justify-between h-16">
-        <Link to={ROUTES.home} title="Home" className="text-2xl">
+        <Link
+          to={ROUTES.home}
+          title="Home"
+          className="text-2xl font-recursive-casual font-recursive-bold transition-all duration-[250ms] hover:font-recursive-slant-max"
+        >
           <h1>Alexandre&nbsp;Lim</h1>
         </Link>
         <nav aria-label="Main navigation" className="hidden md:block">
-          <ul className="flex gap-8">
+          <ul className="flex gap-8 font-recursive-semi-casual font-recursive-medium">
             <li>
-              <Link to={ROUTES.about}>About</Link>
+              <HeaderNavLink to={ROUTES.about}>About</HeaderNavLink>
             </li>
             <li>
-              <Link to={ROUTES.experience}>Experience</Link>
+              <HeaderNavLink to={ROUTES.experience}>Experience</HeaderNavLink>
             </li>
             <li>
-              <Link to={ROUTES.blog}>Blog</Link>
+              <HeaderNavLink to={ROUTES.blog}>Blog</HeaderNavLink>
             </li>
             <li>
-              <Link to={ROUTES.growth}>Personal&nbsp;Growth</Link>
+              <HeaderNavLink to={ROUTES.growth}>Personal&nbsp;Growth</HeaderNavLink>
             </li>
           </ul>
         </nav>

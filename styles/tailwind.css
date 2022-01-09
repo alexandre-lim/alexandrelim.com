@@ -8,6 +8,11 @@
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
   }
 
+  .font-recursive-semi-casual {
+    --casl: 'CASL' 0.5;
+    font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+  }
+
   .font-recursive-light {
     --wght: 'wght' 300;
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
@@ -35,6 +40,12 @@
 
   .font-recursive-extrabold {
     --wght: 'wght' 800;
+    font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+  }
+
+  .font-recursive-slant-max {
+    --crsv: 'CRSV' 0;
+    --slnt: 'slnt' -15;
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
   }
 
