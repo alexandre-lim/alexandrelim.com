@@ -91,9 +91,9 @@ export default function Index() {
           <Link to={ROUTES.growth}>See all</Link>
         </div>
 
-        <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
-          <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
-            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
+        <div className="flex gap-8 flex-wrap md:flex-nowrap">
+          <article className="w-full border rounded-lg shadow-md md:max-w-xs">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={16 / 9}>
                 <img
                   className="object-cover w-full h-full"
@@ -113,8 +113,8 @@ export default function Index() {
             </Link>
           </article>
 
-          <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
-            <Link to={`${ROUTES.books}/book-example`} className="block h-full">
+          <article className="w-full border rounded-lg shadow-md md:max-w-xs">
+            <Link to={`${ROUTES.books}/book-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={16 / 9} className="py-2">
                 <img
                   className="object-contain w-full h-full"

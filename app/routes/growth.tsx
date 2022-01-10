@@ -31,8 +31,8 @@ export default function Index() {
             anim id est laborum.
           </p>
           <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
-            <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
-              <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
+            <article className="w-full rounded-lg shadow-md md:max-w-xs">
+              <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
                 <AspectRatio.Root ratio={16 / 9}>
                   <img
                     className="object-cover w-full h-full"
@@ -48,8 +48,8 @@ export default function Index() {
               </Link>
             </article>
 
-            <article className="w-full rounded-lg overflow-hidden shadow-md md:max-w-xs">
-              <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
+            <article className="w-full rounded-lg shadow-md md:max-w-xs">
+              <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
                 <AspectRatio.Root ratio={16 / 9}>
                   <img
                     className="object-cover w-full h-full"
@@ -82,8 +82,8 @@ export default function Index() {
           </p>
 
           <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
-            <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
-              <Link to={`${ROUTES.books}/book-example`} className="block h-full">
+            <article className="w-full border rounded-lg shadow-md md:max-w-xs">
+              <Link to={`${ROUTES.books}/book-example`} className="block h-full overflow-hidden">
                 <AspectRatio.Root ratio={16 / 9} className="py-2">
                   <img
                     className="object-contain w-full h-full"
@@ -99,8 +99,8 @@ export default function Index() {
               </Link>
             </article>
 
-            <article className="w-full border rounded-lg overflow-hidden shadow-md md:max-w-xs">
-              <Link to={`${ROUTES.books}/book-example`} className="block h-full">
+            <article className="w-full border rounded-lg shadow-md md:max-w-xs">
+              <Link to={`${ROUTES.books}/book-example`} className="block h-full overflow-hidden">
                 <AspectRatio.Root ratio={16 / 9} className="py-2">
                   <img
                     className="object-contain w-full h-full"

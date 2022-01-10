@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a {
+    @apply focus-visible:ring;
+  }
+}
+
 @layer utilities {
   .font-recursive-casual {
     --casl: 'CASL' 1;
