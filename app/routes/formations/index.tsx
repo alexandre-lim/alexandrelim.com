@@ -15,8 +15,8 @@ export default function Formations() {
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
-          <article className="w-full rounded-lg overflow-hidden shadow-md">
-            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
+          <article className="w-full rounded-lg shadow-md">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
@@ -36,8 +36,8 @@ export default function Formations() {
             </Link>
           </article>
 
-          <article className="w-full rounded-lg overflow-hidden shadow-md">
-            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
+          <article className="w-full rounded-lg shadow-md">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
@@ -59,8 +59,8 @@ export default function Formations() {
             </Link>
           </article>
 
-          <article className="w-full rounded-lg overflow-hidden shadow-md">
-            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full">
+          <article className="w-full rounded-lg shadow-md">
+            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
