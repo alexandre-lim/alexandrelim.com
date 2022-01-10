@@ -4,6 +4,7 @@ import { ROUTES } from '~/routes';
 import * as Avatar from '@radix-ui/react-avatar';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import * as Separator from '@radix-ui/react-separator';
+import { ButtonLink } from '~/components/ButtonLink';
 
 export default function Index() {
   return (
@@ -19,8 +20,8 @@ export default function Index() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
         </p>
-        <div className="mt-4">
-          <Link to={ROUTES.experience}>See my journey</Link>
+        <div className="mt-8 mx-auto">
+          <ButtonLink to={ROUTES.experience} text={'See my journey'} />
         </div>
       </section>
 
@@ -41,8 +42,10 @@ export default function Index() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
           est laborum.
         </p>
-        <div className="mt-4">
-          <Link to={ROUTES.about}>About me</Link>
+        <div className="flex">
+          <div className="mt-8 mx-auto">
+            <ButtonLink to={ROUTES.about} text={'About me'} />
+          </div>
         </div>
       </section>
 
