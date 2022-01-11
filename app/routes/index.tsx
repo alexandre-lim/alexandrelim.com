@@ -1,10 +1,12 @@
 import { Link } from 'remix';
-import { ROUTES } from '~/routes';
 
 import * as Avatar from '@radix-ui/react-avatar';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import * as Separator from '@radix-ui/react-separator';
+
+import { ROUTES } from '~/routes';
 import { ButtonLink } from '~/components/ButtonLink';
+import { LinkArrowRight } from '~/components/LinkArrowRight';
 
 export default function Index() {
   return (
@@ -52,7 +54,7 @@ export default function Index() {
       <section>
         <div className="flex justify-between items-baseline">
           <h2 className="mb-8 text-xl md:text-2xl font-bold">Newest articles</h2>
-          <Link to={ROUTES.blog}>See the blog</Link>
+          <LinkArrowRight to={ROUTES.blog} text={'See the blog'}></LinkArrowRight>
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
@@ -91,7 +93,7 @@ export default function Index() {
       <section>
         <div className="flex justify-between items-baseline">
           <h2 className="mb-8 text-xl md:text-2xl font-bold">Always learning</h2>
-          <Link to={ROUTES.growth}>See all</Link>
+          <LinkArrowRight to={ROUTES.growth} text={'See all'}></LinkArrowRight>
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
