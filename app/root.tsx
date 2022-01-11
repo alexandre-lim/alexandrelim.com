@@ -66,7 +66,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         <Link
           to={ROUTES.home}
           title="Home"
-          className="text-2xl font-recursive-casual font-recursive-bold transition-all duration-[250ms] hover:font-recursive-slant-max"
+          className="text-2xl font-recursive-casual font-recursive-bold transition-[font-variation-settings] duration-300 hover:font-recursive-slant-max"
         >
           <h1>Alexandre&nbsp;Lim</h1>
         </Link>

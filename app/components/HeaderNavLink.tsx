@@ -10,7 +10,7 @@ function HeaderNavLink({ children, to, className, ...props }: LinkProps) {
     <>
       <Link
         className={clsx(
-          'transition-all duration-[250ms] hover:font-recursive-slant-max',
+          'transition-[font-variation-settings] duration-300 hover:font-recursive-slant-max',
           match ? 'font-recursive-semibold font-recursive-casual text-blue-500' : null,
           className,
         )}
