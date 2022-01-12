@@ -7,6 +7,11 @@ import * as Separator from '@radix-ui/react-separator';
 import { ROUTES } from '~/routes';
 import { ButtonLink } from '~/components/ButtonLink';
 import { LinkArrowRight } from '~/components/LinkArrowRight';
+import { ArticleCard } from '~/components/ArticleCard';
+
+function HomePageSecondTitle({ title }: { title: string }) {
+  return <h2 className="mb-8 text-xl md:text-2xl font-recursive-bold font-recursive-semi-casual">{title}</h2>;
+}
 
 export default function Index() {
   return (
@@ -28,7 +33,7 @@ export default function Index() {
       </section>
 
       <section>
-        <h2 className="mb-8 text-xl md:text-2xl font-bold">More than a job title</h2>
+        <HomePageSecondTitle title={'More than a job title'} />
         <div className="flex justify-center mb-4">
           <Avatar.Root className="flex items-center justify-center mx-auto overflow-hidden select-none w-20 h-20 rounded-full bg-black bg-opacity-5">
             <Avatar.Image className="w-full h-full object-cover" src="" alt="" />
@@ -53,46 +58,36 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <h2 className="mb-8 text-xl md:text-2xl font-bold">Newest articles</h2>
+          <HomePageSecondTitle title={'Newest articles'} />
           <LinkArrowRight to={ROUTES.blog} text={'See the blog'}></LinkArrowRight>
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
-          <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
-            <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
-              <h3>Article Title</h3>
-              <div className="my-4">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          <ArticleCard
+            to={`${ROUTES.blog}/article-example`}
+            title="Article Title"
+            arrowText="Read More"
+            summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                   dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
-                </p>
-              </div>
-              <div>Read More</div>
-            </Link>
-          </article>
+                  aliquip ex ea commodo consequat."
+          />
 
-          <article className="border rounded-lg flex-auto shadow-md md:max-w-xs">
-            <Link to={`${ROUTES.blog}/article-example`} className="block h-full p-8">
-              <h3>Article Title</h3>
-              <div className="my-4">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-              <div>Read More</div>
-            </Link>
-          </article>
+          <ArticleCard
+            to={`${ROUTES.blog}/article-example`}
+            title="Article Title"
+            arrowText="Read More"
+            summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum."
+          />
         </div>
       </section>
 
       <section>
         <div className="flex justify-between items-baseline">
-          <h2 className="mb-8 text-xl md:text-2xl font-bold">Always learning</h2>
+          <HomePageSecondTitle title={'Always learning'} />
           <LinkArrowRight to={ROUTES.growth} text={'See all'}></LinkArrowRight>
         </div>
 
