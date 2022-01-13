@@ -4,6 +4,6 @@ export const ROUTES = {
   experience: '/experience',
   blog: '/blog',
   growth: '/growth',
-  formations: '/formations',
+  courseReviews: '/course-reviews',
   books: '/books',
 };

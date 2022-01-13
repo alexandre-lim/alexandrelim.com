@@ -1,13 +1,11 @@
-import { Link } from 'remix';
-
 import * as Avatar from '@radix-ui/react-avatar';
-import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-import * as Separator from '@radix-ui/react-separator';
 
 import { ROUTES } from '~/routes';
 import { ButtonLink } from '~/components/ButtonLink';
 import { LinkArrowRight } from '~/components/LinkArrowRight';
 import { ArticleCard } from '~/components/ArticleCard';
+import { BookdCard } from '~/components/BookCard';
+import { CourseCard } from '~/components/CourseCard';
 
 function HomePageSecondTitle({ title }: { title: string }) {
   return <h2 className="mb-8 text-xl md:text-2xl font-recursive-bold font-recursive-semi-casual">{title}</h2>;
@@ -87,54 +85,55 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <HomePageSecondTitle title={'Always learning'} />
-          <LinkArrowRight to={ROUTES.growth} text={'See all'}></LinkArrowRight>
+          <HomePageSecondTitle title={'Book notes'} />
+          <LinkArrowRight to={ROUTES.books} text={'See book notes'}></LinkArrowRight>
+        </div>
+
+        <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
+          <BookdCard
+            to={`${ROUTES.books}/book-example`}
+            title={'Clean Code'}
+            author={'Robert C. Martin'}
+            imgSrc={'https://miro.medium.com/max/1103/1*PKsDuPxNoKJyJvmlLc64qg.jpeg'}
+            ratio={16 / 9}
+          />
+
+          <BookdCard
+            to={`${ROUTES.books}/book-example`}
+            title={'Atomic Habits'}
+            author={'James Clear'}
+            imgSrc={
+              'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529153916l/40540502._SY475_.jpg'
+            }
+            ratio={16 / 9}
+          />
+        </div>
+      </section>
+
+      <section>
+        <div className="flex justify-between items-baseline">
+          <HomePageSecondTitle title={'Course reviews'} />
+          <LinkArrowRight to={ROUTES.courseReviews} text={'See course reviews'}></LinkArrowRight>
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
-          <article className="w-full border rounded-lg shadow-md md:max-w-xs">
-            <Link to={`${ROUTES.formations}/formation-example`} className="block h-full overflow-hidden">
-              <AspectRatio.Root ratio={16 / 9}>
-                <img
-                  className="object-cover w-full h-full"
-                  src="https://certificates.akimbo.com/img/akimbo_certificate_share.jpg"
-                  alt="The Marketing Seminar certificate"
-                />
-              </AspectRatio.Root>
-              <Separator.Root orientation="horizontal" className="h-px w-full bg-gray-200" />
-              <div className="p-8">
-                <h3>The Marketing Seminar by&nbsp;Seth&nbsp;Godin</h3>
-                <p className="my-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
-                </p>
-              </div>
-            </Link>
-          </article>
+          <CourseCard
+            to={`${ROUTES.courseReviews}/course-example`}
+            title={'The Marketing Seminar'}
+            author={'Seth Godin'}
+            imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
+            imgAlt={'The Marketing Seminar certificate'}
+            ratio={16 / 9}
+          />
 
-          <article className="w-full border rounded-lg shadow-md md:max-w-xs">
-            <Link to={`${ROUTES.books}/book-example`} className="block h-full overflow-hidden">
-              <AspectRatio.Root ratio={16 / 9} className="py-2">
-                <img
-                  className="object-contain w-full h-full"
-                  src="https://miro.medium.com/max/1103/1*PKsDuPxNoKJyJvmlLc64qg.jpeg"
-                  alt="Clean Code by Robert C. Martin"
-                />
-              </AspectRatio.Root>
-              <Separator.Root orientation="horizontal" className="h-px w-full bg-gray-200" />
-              <div className="p-8">
-                <h3>Clean Code by Robert C. Martin</h3>
-                <p className="my-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-            </Link>
-          </article>
+          <CourseCard
+            to={`${ROUTES.courseReviews}/course-example`}
+            title={'The Marketing Seminar'}
+            author={'Seth Godin'}
+            imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
+            imgAlt={'The Marketing Seminar certificate'}
+            ratio={16 / 9}
+          />
         </div>
       </section>
     </div>

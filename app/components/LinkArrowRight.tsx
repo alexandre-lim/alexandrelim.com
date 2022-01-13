@@ -7,7 +7,7 @@ interface LinkArrowRightProps extends LinkProps {
 
 function LinkArrowRight({ text, to }: LinkArrowRightProps) {
   return (
-    <Link to={to} className="group flex gap-2 hover:text-blue-500 font-recursive-semi-casual font-recursive-medium">
+    <Link to={to} className="group flex gap-2 hover:text-blue-500 font-recursive-semi-casual font-recursive-semibold">
       <span className="transition-[font-variation-settings] duration-300 group-hover:font-recursive-slant-max">
         {text}
       </span>

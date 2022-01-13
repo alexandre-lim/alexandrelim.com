@@ -1,14 +1,14 @@
 import { Link } from 'remix';
 import { ROUTES } from '~/routes';
 
-export default function FormationExample() {
+export default function CourseExample() {
   return (
     <>
       <div className="max-w-2xl mx-auto">
-        <Link className="inline-block mb-8" to={ROUTES.formations}>
-          Back to formations
+        <Link className="inline-block mb-8" to={ROUTES.courseReviews}>
+          Back to course reviews
         </Link>
-        <h2 className="text-xl md:text-4xl font-bold text-center">Formation title</h2>
+        <h2 className="text-xl md:text-4xl font-bold text-center">Course title</h2>
 
         <article className="mt-8 flex flex-col gap-8">
           <h3 className="text-xl md:text-2xl font-bold">What I learned</h3>
