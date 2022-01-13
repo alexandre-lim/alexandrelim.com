@@ -5,7 +5,7 @@ import { ButtonLink } from '~/components/ButtonLink';
 import { LinkArrowRight } from '~/components/LinkArrowRight';
 import { ArticleCard } from '~/components/ArticleCard';
 import { BookdCard } from '~/components/BookCard';
-import { CourseCard } from '~/components/CourseCard';
+import { CourseReviewCard } from '~/components/CourseReviewCard';
 
 function HomePageSecondTitle({ title }: { title: string }) {
   return <h2 className="mb-8 text-xl md:text-2xl font-recursive-bold font-recursive-semi-casual">{title}</h2>;
@@ -117,7 +117,7 @@ export default function Index() {
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
-          <CourseCard
+          <CourseReviewCard
             to={`${ROUTES.courseReviews}/course-example`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}
@@ -126,7 +126,7 @@ export default function Index() {
             ratio={16 / 9}
           />
 
-          <CourseCard
+          <CourseReviewCard
             to={`${ROUTES.courseReviews}/course-example`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}

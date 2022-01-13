@@ -2,7 +2,7 @@ import { Link, LinkProps } from 'remix';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import * as Separator from '@radix-ui/react-separator';
 
-interface CourseCardProps extends LinkProps {
+interface CourseReviewCardProps extends LinkProps {
   title: string;
   author: string;
   imgSrc: string;
@@ -10,7 +10,7 @@ interface CourseCardProps extends LinkProps {
   ratio: number;
 }
 
-function CourseCard({ to, title, author, imgSrc, imgAlt, ratio }: CourseCardProps) {
+function CourseReviewCard({ to, title, author, imgSrc, imgAlt, ratio }: CourseReviewCardProps) {
   return (
     <article className="group w-full border rounded-lg shadow-md transition hover:-translate-y-1 md:max-w-xs">
       <Link to={to} className="block h-full overflow-hidden">
@@ -28,4 +28,4 @@ function CourseCard({ to, title, author, imgSrc, imgAlt, ratio }: CourseCardProp
   );
 }
 
-export { CourseCard };
+export { CourseReviewCard };
