@@ -82,7 +82,10 @@ function Layout({ children }: { children: React.ReactNode }) {
               <HeaderNavLink to={ROUTES.blog}>Blog</HeaderNavLink>
             </li>
             <li>
-              <HeaderNavLink to={ROUTES.growth}>Personal&nbsp;Growth</HeaderNavLink>
+              <HeaderNavLink to={ROUTES.books}>Book notes</HeaderNavLink>
+            </li>
+            <li>
+              <HeaderNavLink to={ROUTES.courseReviews}>Course reviews</HeaderNavLink>
             </li>
           </ul>
         </nav>
