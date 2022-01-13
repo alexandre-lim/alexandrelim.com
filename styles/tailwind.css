@@ -43,6 +43,12 @@
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
   }
 
+  .font-recursive-slant-base {
+    --crsv: 'CRSV' 0.5;
+    --slnt: 'slnt' 0;
+    font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
+  }
+
   .font-recursive-slant-max {
     --crsv: 'CRSV' 0;
     --slnt: 'slnt' -15;
