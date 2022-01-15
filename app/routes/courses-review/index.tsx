@@ -1,8 +1,6 @@
-import { Link } from 'remix';
-import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-
 import { ROUTES } from '~/routes';
 import { PageSeparator } from '~/components/PageSeparator';
+import { CourseReviewDetailCard } from '~/components/CourseReviewDetailCard';
 
 export default function CoursesReview() {
   return (
@@ -19,73 +17,46 @@ export default function CoursesReview() {
 
       <PageSeparator />
 
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
-        <article className="w-full rounded-lg shadow-md">
-          <Link to={`${ROUTES.coursesReview}/course-example`} className="block h-full overflow-hidden">
-            <AspectRatio.Root ratio={18 / 9}>
-              <img
-                className="object-cover w-full h-full"
-                src="https://certificates.akimbo.com/img/akimbo_certificate_share.jpg"
-                alt="The Marketing Seminar certificate"
-              />
-            </AspectRatio.Root>
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] sm:grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
+        <CourseReviewDetailCard
+          to={`${ROUTES.coursesReview}/course-example`}
+          title={'The Marketing Seminar'}
+          author={'Seth Godin'}
+          imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
+          imgAlt={'The Marketing Seminar certificate'}
+          ratio={4 / 2}
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+       dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+       ex ea commodo consequat."
+        />
 
-            <div className="p-8">
-              <h3>The Marketing Seminar</h3>
-              <p className="my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
-              </p>
-            </div>
-          </Link>
-        </article>
+        <CourseReviewDetailCard
+          to={`${ROUTES.coursesReview}/course-example`}
+          title={'Certificate Title'}
+          author={'Author Name'}
+          imgSrc={'https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80'}
+          imgAlt={'Landscape photo by Tobias Tullius'}
+          ratio={4 / 2}
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum."
+        />
 
-        <article className="w-full rounded-lg shadow-md">
-          <Link to={`${ROUTES.coursesReview}/course-example`} className="block h-full overflow-hidden">
-            <AspectRatio.Root ratio={18 / 9}>
-              <img
-                className="object-cover w-full h-full"
-                src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                alt="Landscape photo by Tobias Tullius"
-              />
-            </AspectRatio.Root>
-
-            <div className="p-8">
-              <h3>Certificate Title</h3>
-              <p className="my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </Link>
-        </article>
-
-        <article className="w-full rounded-lg shadow-md">
-          <Link to={`${ROUTES.coursesReview}/course-example`} className="block h-full overflow-hidden">
-            <AspectRatio.Root ratio={18 / 9}>
-              <img
-                className="object-cover w-full h-full"
-                src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
-                alt="Landscape photo by Tobias Tullius"
-              />
-            </AspectRatio.Root>
-
-            <div className="p-8">
-              <h3>Certificate Title</h3>
-              <p className="my-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </Link>
-        </article>
+        <CourseReviewDetailCard
+          to={`${ROUTES.coursesReview}/course-example`}
+          title={'Certificate Title'}
+          author={'Author Name'}
+          imgSrc={'https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80'}
+          imgAlt={'Landscape photo by Tobias Tullius'}
+          ratio={4 / 2}
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum."
+        />
       </div>
     </>
   );
