@@ -112,13 +112,13 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <HomePageSecondTitle title={'Course reviews'} />
-          <LinkArrowRight to={ROUTES.courseReviews} text={'See course reviews'}></LinkArrowRight>
+          <HomePageSecondTitle title={'Courses review'} />
+          <LinkArrowRight to={ROUTES.coursesReview} text={'See courses review'}></LinkArrowRight>
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
           <CourseReviewCard
-            to={`${ROUTES.courseReviews}/course-example`}
+            to={`${ROUTES.coursesReview}/course-example`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}
             imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
@@ -127,7 +127,7 @@ export default function Index() {
           />
 
           <CourseReviewCard
-            to={`${ROUTES.courseReviews}/course-example`}
+            to={`${ROUTES.coursesReview}/course-example`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}
             imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}

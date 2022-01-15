@@ -3,6 +3,6 @@ export const ROUTES = {
   about: '/about',
   experience: '/experience',
   blog: '/blog',
-  courseReviews: '/course-reviews',
+  coursesReview: '/courses-review',
   books: '/books',
 };

@@ -5,8 +5,8 @@ export default function CourseExample() {
   return (
     <>
       <div className="max-w-2xl mx-auto">
-        <Link className="inline-block mb-8" to={ROUTES.courseReviews}>
-          Back to course reviews
+        <Link className="inline-block mb-8" to={ROUTES.coursesReview}>
+          Back to courses review
         </Link>
         <h2 className="text-xl md:text-4xl font-bold text-center">Course title</h2>
 
