@@ -3,7 +3,7 @@ import * as Avatar from '@radix-ui/react-avatar';
 import { ROUTES } from '~/routes';
 import { ButtonLink } from '~/components/ButtonLink';
 import { LinkArrowRight } from '~/components/LinkArrowRight';
-import { ArticleCard } from '~/components/ArticleCard';
+import { ArticleCard, ArticleHeaderTag } from '~/components/ArticleCard';
 import { BookdCard } from '~/components/BookCard';
 import { CourseReviewCard } from '~/components/CourseReviewCard';
 
@@ -63,6 +63,8 @@ export default function Index() {
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
           <ArticleCard
             to={`${ROUTES.blog}/article-example`}
+            articleClassName="md:max-w-xs"
+            headerTag={ArticleHeaderTag.h3}
             title="Article Title"
             arrowText="Read More"
             summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -72,6 +74,8 @@ export default function Index() {
 
           <ArticleCard
             to={`${ROUTES.blog}/article-example`}
+            articleClassName="md:max-w-xs"
+            headerTag={ArticleHeaderTag.h3}
             title="Article Title"
             arrowText="Read More"
             summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

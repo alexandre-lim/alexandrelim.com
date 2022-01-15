@@ -1,19 +1,41 @@
 import { Link, LinkProps } from 'remix';
+import clsx from 'clsx';
 import { DoubleArrowRightIcon } from '@radix-ui/react-icons';
 
 interface ArticleCardProps extends LinkProps {
+  articleClassName?: string;
+  headerTag: ArticleHeaderTag;
   title: string;
   summary: string;
   arrowText: string;
 }
+interface ArticleHeaderProps {
+  className: string;
+  title: string;
+}
 
-function ArticleCard({ to, title, summary, arrowText }: ArticleCardProps) {
+export enum ArticleHeaderTag {
+  h2 = 'h2',
+  h3 = 'h3',
+}
+
+function ArticleCard({ to, articleClassName, headerTag, title, summary, arrowText }: ArticleCardProps) {
   return (
-    <article className="group border rounded-lg flex-auto shadow-md transition hover:-translate-y-1 md:max-w-xs">
+    <article
+      className={clsx('group border rounded-lg flex-auto shadow-md transition hover:-translate-y-1', articleClassName)}
+    >
       <Link to={to} className="block h-full p-8">
-        <h3 className="group-hover:text-blue-500 text-xl font-recursive-semibold font-recursive-semi-casual">
-          {title}
-        </h3>
+        {headerTag === ArticleHeaderTag.h2 ? (
+          <ArticleCardSecondTitle
+            className="group-hover:text-blue-500 text-xl font-recursive-semibold font-recursive-semi-casual"
+            title={title}
+          />
+        ) : (
+          <ArticleCardThirdTitle
+            className="group-hover:text-blue-500 text-xl font-recursive-semibold font-recursive-semi-casual"
+            title={title}
+          />
+        )}
         <div className="my-4">
           <p>{summary}</p>
         </div>
@@ -24,6 +46,14 @@ function ArticleCard({ to, title, summary, arrowText }: ArticleCardProps) {
       </Link>
     </article>
   );
+}
+
+function ArticleCardSecondTitle({ className, title }: ArticleHeaderProps) {
+  return <h2 className={className}>{title}</h2>;
+}
+
+function ArticleCardThirdTitle({ className, title }: ArticleHeaderProps) {
+  return <h3 className={className}>{title}</h3>;
 }
 
 export { ArticleCard };
