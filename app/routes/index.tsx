@@ -15,10 +15,10 @@ export default function Index() {
   return (
     <div className="flex flex-col gap-16 max-w-2xl mx-auto">
       <section className="flex flex-col">
-        <h2 className="self-center max-w-lg leading-tight text-3xl md:text-4xl text-black dark:text-white font-recursive-casual font-recursive-bold">
+        <h2 className="self-center leading-tight text-3xl sm:text-4xl md:text-5xl text-black dark:text-white font-recursive-casual font-recursive-bold">
           Learn&nbsp;Practice&nbsp;Give
         </h2>
-        <p className="mt-8">
+        <p className="mt-16">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
