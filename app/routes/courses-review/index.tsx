@@ -2,12 +2,12 @@ import { Link } from 'remix';
 import { ROUTES } from '~/routes';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
-export default function CourseReviews() {
+export default function CoursesReview() {
   return (
     <>
       <div className="flex flex-col gap-8">
         <div>
-          <h2 className="text-xl md:text-2xl font-bold">Course Reviews</h2>
+          <h2 className="text-xl md:text-2xl font-bold">Courses Review</h2>
           <p className="mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore ma
@@ -16,7 +16,7 @@ export default function CourseReviews() {
 
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
           <article className="w-full rounded-lg shadow-md">
-            <Link to={`${ROUTES.courseReviews}/course-example`} className="block h-full overflow-hidden">
+            <Link to={`${ROUTES.coursesReview}/course-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
@@ -37,7 +37,7 @@ export default function CourseReviews() {
           </article>
 
           <article className="w-full rounded-lg shadow-md">
-            <Link to={`${ROUTES.courseReviews}/course-example`} className="block h-full overflow-hidden">
+            <Link to={`${ROUTES.coursesReview}/course-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
@@ -60,7 +60,7 @@ export default function CourseReviews() {
           </article>
 
           <article className="w-full rounded-lg shadow-md">
-            <Link to={`${ROUTES.courseReviews}/course-example`} className="block h-full overflow-hidden">
+            <Link to={`${ROUTES.coursesReview}/course-example`} className="block h-full overflow-hidden">
               <AspectRatio.Root ratio={18 / 9}>
                 <img
                   className="object-cover w-full h-full"
