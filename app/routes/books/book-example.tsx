@@ -1,17 +1,18 @@
-import { Link } from 'remix';
+import { LinkArrowLeft } from '~/components/LinkArrowLeft';
 import { ROUTES } from '~/routes';
 
 export default function BookExample() {
   return (
     <>
       <div className="max-w-2xl mx-auto">
-        <Link className="inline-block mb-8" to={ROUTES.books}>
-          Back to books
-        </Link>
-        <h2 className="text-xl md:text-4xl font-bold text-center">Book title</h2>
+        <div className="mb-16">
+          <LinkArrowLeft to={ROUTES.books} text={'Back to book notes'} />
+        </div>
 
-        <article className="mt-8 flex flex-col gap-8">
-          <h3 className="text-xl md:text-2xl font-bold">Notes</h3>
+        <h2 className="text-xl md:text-4xl text-center font-recursive-bold font-recursive-semi-casual">Book title</h2>
+
+        <article className="mt-16 flex flex-col gap-8">
+          <h3 className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual">Notes</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Vulputate enim nulla aliquet porttitor. Lacus luctus accumsan tortor posuere ac ut
