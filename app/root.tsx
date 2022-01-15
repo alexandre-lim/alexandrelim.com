@@ -90,7 +90,7 @@ function Layout({ children }: { children: React.ReactNode }) {
           </ul>
         </nav>
       </MaxWidthWrapper>
-      <MaxWidthWrapper tag="main" className="mt-12 mb-24">
+      <MaxWidthWrapper tag="main" className="mt-16 mb-24">
         {children}
       </MaxWidthWrapper>
       <footer className="mt-auto p-4 border border-solid border-zinc-300">
