@@ -90,12 +90,14 @@ function Layout({ children }: { children: React.ReactNode }) {
           </ul>
         </nav>
       </MaxWidthWrapper>
-      <MaxWidthWrapper tag="main" className="my-12">
+      <MaxWidthWrapper tag="main" className="mt-12 mb-24">
         {children}
       </MaxWidthWrapper>
       <footer className="mt-auto p-4 border border-solid border-zinc-300">
         <div className="text-center">
-          <p className="text-xs">© 2022-present Alexandre Lim. All Rights Reserved.</p>
+          <p className="text-xs text-gray-700 font-recursive-semi-casual">
+            © 2022-present Alexandre Lim. All Rights Reserved.
+          </p>
         </div>
       </footer>
     </div>
