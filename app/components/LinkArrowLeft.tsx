@@ -13,7 +13,7 @@ function LinkArrowLeft({ text, to }: LinkArrowLeftProps) {
         width={24}
         className="transition-transform duration-500 group-hover:-translate-x-0.5"
       />
-      <span>{text}</span>
+      <span className="tracking-tight">{text}</span>
     </Link>
   );
 }
