@@ -15,6 +15,7 @@ function ButtonLink({ text, to }: ButtonLinkProps) {
         'transition outline outline-1 outline-blue-500',
         'hover:ring-2 hover:ring-offset-4',
         'focus-visible:ring-2 focus-visible:ring-offset-4',
+        'dark:ring-offset-[color:var(--color-background)] ',
       )}
     >
       {text}

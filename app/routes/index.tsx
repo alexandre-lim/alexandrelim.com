@@ -33,7 +33,7 @@ export default function Index() {
       <section>
         <HomePageSecondTitle title={'More than a job title'} />
         <div className="flex justify-center mb-4">
-          <Avatar.Root className="flex items-center justify-center mx-auto overflow-hidden select-none w-20 h-20 rounded-full bg-black bg-opacity-5">
+          <Avatar.Root className="flex items-center justify-center mx-auto overflow-hidden select-none w-20 h-20 rounded-full bg-black dark:bg-slate-100 bg-opacity-5">
             <Avatar.Image className="w-full h-full object-cover" src="" alt="" />
             <Avatar.Fallback className="text-indigo-500" delayMs={600}>
               AL

@@ -20,10 +20,10 @@ function CourseReviewDetailCard({
   description,
 }: CourseReviewDetailCardProps) {
   return (
-    <article className="group w-full rounded-lg shadow-md transition hover:-translate-y-1">
+    <article className="group w-full border rounded-lg shadow-md transition hover:-translate-y-1 p-2">
       <Link to={to} className="block h-full overflow-hidden">
         <AspectRatio.Root ratio={ratio}>
-          <img className="object-cover w-full h-full" src={imgSrc} alt={imgAlt} />
+          <img className="object-cover w-full h-full rounded-t-lg" src={imgSrc} alt={imgAlt} />
         </AspectRatio.Root>
 
         <div className="p-8">

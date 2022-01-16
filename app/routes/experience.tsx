@@ -24,7 +24,7 @@ export default function Index() {
               <h2 className="text-xl md:text-2xl font-bold">Yousign</h2>
             </a>
             <Separator.Root orientation="vertical" className="h-6 w-px bg-gray-500 mx-4" />
-            <p className="text-gray-700 text-xs md:text-base pt-1">July 2020 - Present</p>
+            <p className="text-gray-700 dark:text-slate-50 text-xs md:text-base pt-1">July 2020 - Present</p>
           </div>
           <div className="w-full overflow-hidden md:max-w-xs mx-auto">
             <img
@@ -33,7 +33,7 @@ export default function Index() {
               alt="Yousign logo"
             />
           </div>
-          <p className="my-4">
+          <p className="my-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
@@ -44,21 +44,33 @@ export default function Index() {
           <ul className="pl-4 flex flex-col gap-2">
             <li>
               <div className="flex gap-2">
-                <TriangleRightIcon className="text-gray-800 text-opacity-80 min-w-[14px]" height={24} width={24} />
+                <TriangleRightIcon
+                  className="text-gray-800 dark:text-slate-50 text-opacity-80 min-w-[14px]"
+                  height={24}
+                  width={24}
+                />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
               </div>
             </li>
             <li>
               <div className="flex gap-2">
-                <TriangleRightIcon className="text-gray-800 text-opacity-80 min-w-[14px]" height={24} width={24} />
+                <TriangleRightIcon
+                  className="text-gray-800 dark:text-slate-50 text-opacity-80 min-w-[14px]"
+                  height={24}
+                  width={24}
+                />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
               </div>
             </li>
             <li>
               <div className="flex gap-2">
-                <TriangleRightIcon className="text-gray-800 text-opacity-80 min-w-[14px]" height={24} width={24} />
+                <TriangleRightIcon
+                  className="text-gray-800 dark:text-slate-50 text-opacity-80 min-w-[14px]"
+                  height={24}
+                  width={24}
+                />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
               </div>
@@ -87,7 +99,7 @@ export default function Index() {
               <h2 className="text-xl md:text-2xl font-bold">Le&nbsp;Monde</h2>
             </a>
             <Separator.Root orientation="vertical" className="h-6 w-px bg-gray-500 mx-4" />
-            <p className="text-gray-700 text-xs md:text-base pt-1">October 2018 - June 2020</p>
+            <p className="text-gray-700 dark:dark:text-slate-50 text-xs md:text-base pt-1">October 2018 - June 2020</p>
           </div>
           <div className="w-full overflow-hidden md:max-w-xs mx-auto">
             <img
@@ -96,7 +108,7 @@ export default function Index() {
               alt="Le Monde logo"
             />
           </div>
-          <p className="my-4">
+          <p className="my-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
