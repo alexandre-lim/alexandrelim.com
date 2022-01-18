@@ -5,7 +5,7 @@ export default function ArticleExample() {
   return (
     <>
       <div className="max-w-2xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-16 inline-block">
           <LinkArrowLeft to={ROUTES.blog} text={'Back to articles'} />
         </div>
 

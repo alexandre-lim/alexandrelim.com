@@ -5,7 +5,7 @@ export default function BookExample() {
   return (
     <>
       <div className="max-w-2xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-16 inline-block">
           <LinkArrowLeft to={ROUTES.books} text={'Back to book notes'} />
         </div>
 
