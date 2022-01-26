@@ -9,12 +9,7 @@ async function fetchBlogDatabase() {
     database_id: BLOG_DATABASE_ID,
     filter: {
       and: [
-        {
-          property: BlogProperties.Status,
-          select: {
-            equals: Status.Published,
-          },
-        },
+        getPropertyStatusFilter(),
         {
           property: BlogProperties.Slug,
           select: {
@@ -31,12 +26,7 @@ async function fetchBlogDatabaseBySlug(slug: string) {
     database_id: BLOG_DATABASE_ID,
     filter: {
       and: [
-        {
-          property: BlogProperties.Status,
-          select: {
-            equals: Status.Published,
-          },
-        },
+        getPropertyStatusFilter(),
         {
           property: BlogProperties.Slug,
           select: {
@@ -53,6 +43,32 @@ async function fetchBlogArticleBlocks(pageBlockId: string) {
   return await notion.blocks.children.list({
     block_id: pageBlockId,
   });
+}
+
+function getPropertyStatusFilter() {
+  return process.env.NODE_ENV === 'development'
+    ? {
+        or: [
+          {
+            property: BlogProperties.Status,
+            select: {
+              equals: Status.Published,
+            },
+          },
+          {
+            property: BlogProperties.Status,
+            select: {
+              equals: Status.Draft,
+            },
+          },
+        ],
+      }
+    : {
+        property: BlogProperties.Status,
+        select: {
+          equals: Status.Published,
+        },
+      };
 }
 
 export { fetchBlogDatabase, fetchBlogDatabaseBySlug, fetchBlogArticleBlocks };

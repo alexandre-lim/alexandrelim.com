@@ -15,6 +15,7 @@ export enum BlogProperties {
 
 export enum Status {
   Published = 'Published',
+  Draft = 'Draft',
 }
 
 export interface ArticlesData {
