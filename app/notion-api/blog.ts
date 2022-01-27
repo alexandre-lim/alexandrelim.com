@@ -21,22 +21,8 @@ async function fetchBlogDatabase() {
   });
 }
 
-async function fetchBlogDatabaseBySlug(slug: string) {
-  return await notion.databases.query({
-    database_id: BLOG_DATABASE_ID,
-    filter: {
-      and: [
-        getPropertyStatusFilter(),
-        {
-          property: BlogProperties.Slug,
-          select: {
-            equals: slug,
-          },
-        },
-      ],
-    },
-    page_size: 1,
-  });
+async function fetchBlogArticleByPageId(pageId: string) {
+  return await notion.pages.retrieve({ page_id: pageId });
 }
 
 async function fetchBlogArticleBlocks(pageBlockId: string) {
@@ -71,4 +57,4 @@ function getPropertyStatusFilter() {
       };
 }
 
-export { fetchBlogDatabase, fetchBlogDatabaseBySlug, fetchBlogArticleBlocks };
+export { fetchBlogDatabase, fetchBlogArticleByPageId, fetchBlogArticleBlocks };

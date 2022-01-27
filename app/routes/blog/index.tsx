@@ -39,7 +39,7 @@ export default function Index() {
     return (
       <ArticleCard
         key={id}
-        to={`${ROUTES.blog}/${slug}`}
+        to={`${ROUTES.blog}/${slug}-${id}`}
         headerTag={ArticleHeaderTag.h2}
         title={title}
         arrowText="Read More"
