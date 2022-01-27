@@ -29,3 +29,5 @@ export interface ArticlesData {
     Title: PropertyTitle;
   };
 }
+
+export type ArticleProperties = Omit<ArticlesData, 'id'>;

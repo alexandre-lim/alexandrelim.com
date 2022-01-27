@@ -4,45 +4,40 @@ import invariant from 'tiny-invariant';
 
 import { ROUTES } from '~/routes';
 import { LinkArrowLeft } from '~/components/LinkArrowLeft';
-import { QueryDatabaseResponseListResults } from '~/types/notion/queryDatabaseResponseListResults';
 import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
-import { fetchBlogArticleBlocks, fetchBlogDatabaseBySlug } from '~/notion-api/blog';
-import { ArticlesData } from '~/types/notion/blog';
+import { fetchBlogArticleBlocks, fetchBlogArticleByPageId } from '~/notion-api/blog';
+import { ArticleProperties } from '~/types/notion/blog';
+import { GetPageResponse } from '~/types/notion/GetPageResponse';
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, 'expected params.slug');
 
   const { slug } = params;
+  const UUID_LENGTH = 36;
 
-  const blogDatabaseQueryResponse = await fetchBlogDatabaseBySlug(slug);
+  const pageId = slug.slice(slug.length - UUID_LENGTH);
 
-  const articlesResults = blogDatabaseQueryResponse.results as QueryDatabaseResponseListResults;
+  const pageResponse = (await fetchBlogArticleByPageId(pageId)) as GetPageResponse;
 
-  const articlesData = articlesResults.map((articlesResult) => {
-    const { Published, Edited, Tags, Summary, Slug, Title } = articlesResult.properties;
-    return { id: articlesResult.id, properties: { Published, Edited, Tags, Summary, Slug, Title } };
-  });
+  const { Published, Edited, Tags, Summary, Slug, Title } = pageResponse.properties;
 
-  const pageBlockId = articlesData[0].id;
-  const listBlockChildrenResponse = await fetchBlogArticleBlocks(pageBlockId);
+  const articleData = { properties: { Published, Edited, Tags, Summary, Slug, Title } } as ArticleProperties;
+
+  const listBlockChildrenResponse = await fetchBlogArticleBlocks(pageId);
 
   const blockResults = listBlockChildrenResponse.results as ListBlockChildrenResponseResults;
 
-  return [articlesData, blockResults];
+  return [articleData, blockResults];
 };
 
 export default function ArticleSlug() {
-  const [articlesData, blockResults]: [Array<ArticlesData>, ListBlockChildrenResponseResults] = useLoaderData();
+  const [articleData, blockResults]: [ArticleProperties, ListBlockChildrenResponseResults] = useLoaderData();
 
-  const [articleTitle] = articlesData.map((data) => {
-    const { properties } = data;
+  let articleTitle = '';
 
-    if (properties.Title.title[0]?.type === 'text') {
-      return properties.Title.title[0].text.content;
-    }
-
-    return '';
-  });
+  if (articleData.properties.Title.title[0]?.type === 'text') {
+    articleTitle = articleData.properties.Title.title[0].text.content;
+  }
 
   const blocks = blockResults.map((block, index) => {
     const { id, type } = block;
