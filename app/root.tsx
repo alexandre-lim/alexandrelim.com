@@ -10,6 +10,7 @@ import { ROUTES } from './routes';
 
 import { MaxWidthWrapper } from './components/MaxWidthWrapper';
 import { HeaderNavLink } from './components/HeaderNavLink';
+import { LoaderNavigationLink } from './components/Loader';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
@@ -50,6 +51,7 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
         <Links />
       </head>
       <body>
+        <LoaderNavigationLink />
         {children}
         <ScrollRestoration />
         <Scripts />
