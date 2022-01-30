@@ -62,7 +62,9 @@ export default function Index() {
 
       <PageSeparator />
 
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">{articles}</div>
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] sm:grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
+        {articles}
+      </div>
     </>
   );
 }
