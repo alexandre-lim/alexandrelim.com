@@ -17,3 +17,4 @@ export { type PropertyDivider } from './propertyDivider';
 export { type PropertyImage } from './propertyImage';
 export { type PropertyVideo } from './propertyVideo';
 export { type PropertyCode } from './propertyCode';
+export { type PropertyFiles } from './propertyFiles';
