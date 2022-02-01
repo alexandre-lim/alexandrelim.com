@@ -17,17 +17,23 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const pageId = slug.slice(slug.length - UUID_LENGTH);
 
-  const pageResponse = (await fetchBlogArticleByPageId(pageId)) as GetPageResponse;
+  try {
+    const pageResponse = (await fetchBlogArticleByPageId(pageId)) as GetPageResponse;
 
-  const { Published, Edited, Tags, Summary, Slug, Title } = pageResponse.properties;
+    const { Published, Edited, Tags, Summary, Slug, Title } = pageResponse.properties;
 
-  const articleData = { properties: { Published, Edited, Tags, Summary, Slug, Title } } as ArticleProperties;
+    const articleData = { properties: { Published, Edited, Tags, Summary, Slug, Title } } as ArticleProperties;
 
-  const listBlockChildrenResponse = await fetchBlogArticleBlocks(pageId);
+    const listBlockChildrenResponse = await fetchBlogArticleBlocks(pageId);
 
-  const blockResults = listBlockChildrenResponse.results as ListBlockChildrenResponseResults;
+    const blockResults = listBlockChildrenResponse.results as ListBlockChildrenResponseResults;
 
-  return [articleData, blockResults];
+    return [articleData, blockResults];
+  } catch (error) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
 };
 
 export default function ArticleSlug() {
