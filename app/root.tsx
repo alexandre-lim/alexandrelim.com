@@ -1,4 +1,4 @@
-import { Link, Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix';
+import { Link, Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
 
 import fontFaceStyles from './styles/font.css';
@@ -11,6 +11,8 @@ import { ROUTES } from './routes';
 import { MaxWidthWrapper } from './components/MaxWidthWrapper';
 import { HeaderNavLink } from './components/HeaderNavLink';
 import { LoaderNavigationLink } from './components/Loader';
+import { CatchBoundaryComponent } from './components/CatchBoundaryComponent';
+import { ErrorBoundaryComponent } from './components/ErrorBoundaryComponent';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
@@ -103,5 +105,26 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
     </div>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <Document title="Error">
+      <Layout>
+        <ErrorBoundaryComponent errorMessage={error.message} />
+      </Layout>
+    </Document>
+  );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+  return (
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <Layout>
+        <CatchBoundaryComponent />
+      </Layout>
+    </Document>
   );
 }
