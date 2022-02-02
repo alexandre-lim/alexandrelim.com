@@ -13,6 +13,7 @@ import { HeaderNavLink } from './components/HeaderNavLink';
 import { LoaderNavigationLink } from './components/Loader';
 import { CatchBoundaryComponent } from './components/CatchBoundaryComponent';
 import { ErrorBoundaryComponent } from './components/ErrorBoundaryComponent';
+import { MobileMenu } from './components/MobileMenu';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
@@ -74,7 +75,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         >
           <h1>Alexandre&nbsp;Lim</h1>
         </Link>
-        <nav aria-label="Main navigation" className="hidden md:block">
+        <nav aria-label="Navigation Menu" className="hidden md:block">
           <ul className="flex gap-8 font-recursive-semi-casual font-recursive-medium">
             <li>
               <HeaderNavLink to={ROUTES.about}>About</HeaderNavLink>
@@ -93,6 +94,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             </li>
           </ul>
         </nav>
+        <MobileMenu />
       </MaxWidthWrapper>
       <MaxWidthWrapper tag="main" className="mt-16 mb-24">
         {children}

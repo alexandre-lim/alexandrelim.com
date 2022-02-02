@@ -1,6 +1,7 @@
 :root {
   --color-foreground: hsl(0, 0%, 7%);
   --color-background: hsl(40, 100%, 99%);
+  --color-backdrop: hsl(220deg 5% 40% / 0.8);
   --font-body: 'Recursive', -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto, Arial, sans-serif, system-ui,
     'Apple Color Emoji', 'Segoe UI Emoji';
   /* Monospace: Sans (natural-width) or Mono (fixed-width) */
