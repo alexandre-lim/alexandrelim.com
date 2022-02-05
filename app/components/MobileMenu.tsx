@@ -28,7 +28,7 @@ const MobileMenu = () => {
                 className={clsx(
                   'block m-0 border-none bg-transparent cursor-pointer text-left placeholder-inherit',
                   'focus:outline-offset-2',
-                  'absolute right-0 p-4',
+                  'absolute right-4 top-2 p-4',
                 )}
               >
                 <Cross2Icon height={24} width={24} />

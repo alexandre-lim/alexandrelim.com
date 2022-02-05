@@ -67,7 +67,10 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div id="root" className="flex flex-col min-h-full">
-      <MaxWidthWrapper tag="header" className="mt-12 flex items-center justify-between h-16">
+      <MaxWidthWrapper
+        tag="header"
+        className="md:mt-12 flex items-center justify-between h-16 sticky top-0 bg-[color:var(--color-background)] z-10"
+      >
         <Link
           to={ROUTES.home}
           title="Home"
