@@ -102,7 +102,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <MaxWidthWrapper tag="main" className="mt-16 mb-24">
         {children}
       </MaxWidthWrapper>
-      <footer className="mt-auto p-4 border border-solid border-zinc-300">
+      <footer className="mt-auto p-4">
         <div className="text-center">
           <p className="text-xs text-gray-700 font-recursive-semi-casual dark:text-slate-50">
             © 2022-present Alexandre Lim. All Rights Reserved.
