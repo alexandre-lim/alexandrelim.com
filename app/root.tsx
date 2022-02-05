@@ -1,11 +1,11 @@
 import { Link, Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useCatch } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
+import clsx from 'clsx';
 
 import fontFaceStyles from './styles/font.css';
 import tailwindStyles from './styles/tailwind.css';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
-import darkStyles from './styles/dark.css';
 import { ROUTES } from './routes';
 
 import { MaxWidthWrapper } from './components/MaxWidthWrapper';
@@ -14,6 +14,7 @@ import { LoaderNavigationLink } from './components/Loader';
 import { CatchBoundaryComponent } from './components/CatchBoundaryComponent';
 import { ErrorBoundaryComponent } from './components/ErrorBoundaryComponent';
 import { MobileMenu } from './components/MobileMenu';
+import { ThemeToogle } from './components/ThemeToogle';
 
 export const meta: MetaFunction = () => {
   return { title: 'Alexandre Lim' };
@@ -25,11 +26,6 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: tailwindStyles },
     { rel: 'stylesheet', href: resetStyles },
     { rel: 'stylesheet', href: appStyles },
-    {
-      rel: 'stylesheet',
-      href: darkStyles,
-      media: '(prefers-color-scheme: dark)',
-    },
   ];
 };
 
@@ -54,6 +50,24 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
         <Links />
       </head>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function() {
+              try {
+                if (
+                  localStorage.getItem('theme') === 'dark' ||
+                  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                ) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {
+                console.error(e);
+              }
+            })();`,
+          }}
+        />
         <LoaderNavigationLink />
         {children}
         <ScrollRestoration />
@@ -69,12 +83,19 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div id="root" className="flex flex-col min-h-full">
       <MaxWidthWrapper
         tag="header"
-        className="md:mt-12 flex items-center justify-between h-16 sticky top-0 bg-[color:var(--color-background)] z-10"
+        className={clsx(
+          'md:mt-12 flex items-center justify-between h-16 sticky top-0 z-10',
+          'bg-[color:var(--light-color-background)] dark:bg-[color:var(--dark-color-background)]',
+        )}
       >
         <Link
           to={ROUTES.home}
           title="Home"
-          className="text-2xl font-recursive-casual font-recursive-bold transition-[font-variation-settings] duration-300 hover:font-recursive-slant-max"
+          className={clsx(
+            'text-2xl',
+            'font-recursive-casual font-recursive-bold hover:font-recursive-slant-max',
+            'transition-[font-variation-settings] duration-300',
+          )}
         >
           <h1>Alexandre&nbsp;Lim</h1>
         </Link>
@@ -97,6 +118,9 @@ function Layout({ children }: { children: React.ReactNode }) {
             </li>
           </ul>
         </nav>
+        <div className="hidden md:block">
+          <ThemeToogle />
+        </div>
         <MobileMenu />
       </MaxWidthWrapper>
       <MaxWidthWrapper tag="main" className="mt-16 mb-24">

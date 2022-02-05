@@ -1,6 +1,8 @@
 :root {
-  --color-foreground: hsl(0, 0%, 7%);
-  --color-background: hsl(40, 100%, 99%);
+  --light-color-foreground: hsl(0, 0%, 7%);
+  --light-color-background: hsl(40, 100%, 99%);
+  --dark-color-foreground: hsl(0, 0%, 100%);
+  --dark-color-background: hsl(210, 30%, 8%);
   --color-backdrop: hsl(220deg 5% 40% / 0.8);
   --font-body: 'Recursive', -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto, Arial, sans-serif, system-ui,
     'Apple Color Emoji', 'Segoe UI Emoji';
@@ -19,8 +21,14 @@
 html,
 body {
   padding: 0;
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--light-color-background);
+  color: var(--light-color-foreground);
+}
+
+html.dark,
+html.dark body {
+  background-color: var(--dark-color-background);
+  color: var(--dark-color-foreground);
 }
 
 body {

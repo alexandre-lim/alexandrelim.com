@@ -5,6 +5,7 @@ import { Cross2Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import { HeaderNavLink } from './HeaderNavLink';
 import { ROUTES } from '~/routes';
+import { ThemeToogle } from './ThemeToogle';
 
 const MobileMenu = () => {
   return (
@@ -21,7 +22,10 @@ const MobileMenu = () => {
         >
           <Dialog.Content
             aria-label="Navigation Menu"
-            className="bg-[color:var(--color-background)] w-[300px] h-full p-8 flex flex-col"
+            className={clsx(
+              'bg-[color:var(--light-color-background)] dark:bg-[color:var(--dark-color-background)]',
+              'w-[300px] h-full p-8 flex flex-col',
+            )}
           >
             <Dialog.Close asChild>
               <button
@@ -55,6 +59,7 @@ const MobileMenu = () => {
                 </li>
               </ul>
             </nav>
+            <ThemeToogle />
           </Dialog.Content>
         </Dialog.Overlay>
       </Dialog.Portal>
