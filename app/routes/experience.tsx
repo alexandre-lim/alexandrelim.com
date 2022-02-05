@@ -99,7 +99,7 @@ export default function Index() {
               <h2 className="text-xl md:text-2xl font-bold">Le&nbsp;Monde</h2>
             </a>
             <Separator.Root orientation="vertical" className="h-6 w-px bg-gray-500 mx-4" />
-            <p className="text-gray-700 dark:dark:text-slate-50 text-xs md:text-base pt-1">October 2018 - June 2020</p>
+            <p className="text-gray-700 dark:text-slate-50 text-xs md:text-base pt-1">October 2018 - June 2020</p>
           </div>
           <div className="w-full overflow-hidden md:max-w-xs mx-auto">
             <img
