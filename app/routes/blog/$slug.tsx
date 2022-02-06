@@ -8,6 +8,7 @@ import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildr
 import { fetchBlogArticleBlocks, fetchBlogArticleByPageId } from '~/notion-api/blog';
 import { ArticleProperties } from '~/types/notion/blog';
 import { GetPageResponse } from '~/types/notion/GetPageResponse';
+import { parseBlogNotionBlockResults } from '~/notion-api/parseBlogNotionBlockResults';
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, 'expected params.slug');
@@ -45,41 +46,7 @@ export default function ArticleSlug() {
     articleTitle = articleData.properties.Title.title[0].text.content;
   }
 
-  const blocks = blockResults.map((block, index) => {
-    const { id, type } = block;
-
-    const result = [];
-
-    if (type === 'heading_1') {
-      result.push(
-        <h3 key={`${id}_${index}`} className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual">
-          {block.heading_1.text[0].plain_text}
-        </h3>,
-      );
-    }
-
-    if (type === 'heading_2') {
-      result.push(
-        <h3 key={`${id}_${index}`} className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual">
-          {block.heading_2.text[0].plain_text}
-        </h3>,
-      );
-    }
-
-    if (type === 'heading_3') {
-      result.push(
-        <h3 key={`${id}_${index}`} className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual">
-          {block.heading_3.text[0].plain_text}
-        </h3>,
-      );
-    }
-
-    if (type === 'paragraph' && block.paragraph.text.length > 0 && block.paragraph.text[0].type === 'text') {
-      result.push(<p key={`${id}_${index}`}>{block.paragraph.text[0].text.content}</p>);
-    }
-
-    return result;
-  });
+  const blocks = parseBlogNotionBlockResults(blockResults);
 
   return (
     <>
