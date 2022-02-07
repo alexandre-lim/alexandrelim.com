@@ -1,4 +1,6 @@
 import { Link } from 'remix';
+import { ImageContent } from '~/components/ImageContent';
+
 import { LinkExternal } from '~/components/LinkExternal';
 import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
 
@@ -71,6 +73,21 @@ function parseBlogNotionBlockResults(blockResults: ListBlockChildrenResponseResu
         }
       });
       result.push(<p key={`${id}_${blockIndex}`}>{paragraph}</p>);
+    }
+
+    if (type === 'image') {
+      let caption = '';
+      if (block.image.caption.length > 0 && block.image.caption[0].type === 'text') {
+        caption = block.image.caption[0].text.content;
+      }
+
+      if (block.image.type === 'file') {
+        result.push(<ImageContent src={block.image.file.url} caption={caption} />);
+      }
+
+      if (block.image.type === 'external') {
+        result.push(<ImageContent src={block.image.external.url} caption={caption} />);
+      }
     }
 
     return result;
