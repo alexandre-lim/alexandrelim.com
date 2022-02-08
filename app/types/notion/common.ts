@@ -38,3 +38,12 @@ export type SimpleColor =
   | 'purple'
   | 'pink'
   | 'red';
+
+export type Annotations = {
+  bold: boolean;
+  italic: boolean;
+  strikethrough: boolean;
+  underline: boolean;
+  code: boolean;
+  color: Color;
+};

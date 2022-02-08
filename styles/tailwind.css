@@ -33,6 +33,7 @@
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
   }
 
+  strong,
   .font-recursive-bold {
     --wght: 'wght' 700;
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
@@ -55,7 +56,7 @@
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
   }
 
-  .code {
+  code {
     --mono: 'MONO' 1;
     font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt), var(--crsv);
   }
