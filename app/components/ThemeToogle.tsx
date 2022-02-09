@@ -32,11 +32,11 @@ function ThemeToogle() {
 
   return theme === Theme.dark ? (
     <button aria-label="Activate light mode" title="Activate light mode" onClick={() => setTheme(Theme.light)}>
-      <SunIcon height={20} width={20} className="transition-transform rotate-45" />
+      <MoonIcon height={20} width={20} />
     </button>
   ) : (
     <button aria-label="Activate dark mode" title="Activate dark mode" onClick={() => setTheme(Theme.dark)}>
-      <MoonIcon height={20} width={20} />
+      <SunIcon height={20} width={20} />
     </button>
   );
 }
