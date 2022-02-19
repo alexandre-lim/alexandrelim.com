@@ -8,6 +8,7 @@ import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildr
 import { fetchCourseReviewBlocks, fetchCourseReviewByPageId } from '~/notion-api/coursesReview';
 import { CourseReviewProperties } from '~/types/notion/coursesReview';
 import { GetPageResponse } from '~/types/notion/GetPageResponse';
+import { LastUpdated } from '~/components/LastUpdated';
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, 'expected params.slug');
@@ -98,7 +99,10 @@ export default function ArticleSlug() {
           <span className="text-lg">By&nbsp;{author}</span>
         </h2>
 
-        <article className="mt-16 flex flex-col gap-8">{...blocks}</article>
+        <article className="mt-16 flex flex-col gap-8">
+          {...blocks}
+          <LastUpdated titleTag="h4" edited={courseReviewData.properties.Edited.last_edited_time}></LastUpdated>
+        </article>
       </div>
     </>
   );

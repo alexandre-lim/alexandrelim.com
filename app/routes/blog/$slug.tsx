@@ -9,6 +9,7 @@ import { fetchBlogArticleBlocks, fetchBlogArticleByPageId } from '~/notion-api/b
 import { ArticleProperties } from '~/types/notion/blog';
 import { GetPageResponse } from '~/types/notion/GetPageResponse';
 import { parseBlogNotionBlockResults } from '~/notion-api/parseBlogNotionBlockResults';
+import { LastUpdated } from '~/components/LastUpdated';
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, 'expected params.slug');
@@ -59,7 +60,10 @@ export default function ArticleSlug() {
           {articleTitle}
         </h2>
 
-        <article className="mt-16 flex flex-col gap-8">{...blocks}</article>
+        <article className="mt-16 flex flex-col gap-8">
+          {...blocks}
+          <LastUpdated titleTag="h4" edited={articleData.properties.Edited.last_edited_time}></LastUpdated>
+        </article>
       </div>
     </>
   );
