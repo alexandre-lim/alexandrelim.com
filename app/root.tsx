@@ -49,7 +49,7 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="transition-[color,_background] duration-[350ms] ease-[ease] delay-[0s]">
         <script
           dangerouslySetInnerHTML={{
             __html: `(function() {
@@ -80,7 +80,13 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div id="root" className="flex flex-col min-h-full">
+    <div
+      id="root"
+      className={clsx(
+        'flex flex-col min-h-full',
+        'bg-[color:var(--light-color-background)] dark:bg-[color:var(--dark-color-background)]',
+      )}
+    >
       <MaxWidthWrapper
         tag="header"
         className={clsx(
