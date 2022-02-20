@@ -1,8 +1,10 @@
 import { Link } from 'remix';
 import clsx from 'clsx';
+import { Language } from 'prism-react-renderer';
 
 import { ImageContent } from '~/components/ImageContent';
 import { LinkExternal } from '~/components/LinkExternal';
+import { CodeBlock } from '~/components/CodeBlock';
 import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
 import { Annotations } from '~/types/notion/common';
 
@@ -116,11 +118,17 @@ function parseBlogNotionBlockResults(blockResults: ListBlockChildrenResponseResu
     }
 
     if (type === 'code' && block.code.text?.[0]?.type === 'text') {
-      result.push(
-        <pre key={`${id}_${blockIndex}`} className="overflow-auto" style={{ tabSize: 4 }}>
-          <code>{block.code.text[0].text.content}</code>
-        </pre>,
-      );
+      let language = block.code.language as Language;
+
+      if (
+        block.code.caption.length > 0 &&
+        block.code.caption[0].type === 'text' &&
+        ['jsx', 'tsx'].includes(block.code.caption[0].plain_text)
+      ) {
+        language = block.code.caption[0].plain_text as Language;
+      }
+
+      result.push(<CodeBlock key={`${id}_${blockIndex}`} code={block.code.text[0].text.content} language={language} />);
     }
 
     if (type === 'quote' && block.quote.text?.[0]?.type === 'text') {
