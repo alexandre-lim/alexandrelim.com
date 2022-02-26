@@ -14,7 +14,7 @@ function LinkArrowRight({ text, to }: LinkArrowRightProps) {
       <ArrowRightIcon
         height={24}
         width={24}
-        className="transition-transform duration-500 group-hover:translate-x-0.5"
+        className="translate-y-0.5 transition-transform duration-500 group-hover:translate-x-0.5"
       />
     </Link>
   );

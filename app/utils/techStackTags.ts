@@ -227,7 +227,7 @@ export const techStackTagValues = {
     value: 'JSP',
     link: '',
   },
-  stuts1: {
+  struts1: {
     value: 'Struts 1',
     link: '',
   },
