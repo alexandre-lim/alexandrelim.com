@@ -18,7 +18,7 @@ function CourseReviewDetailCard({ to, title, author, imgSrc, imgAlt, description
           <h2 className="group-hover:text-blue-500 text-xl font-recursive-semibold font-recursive-semi-casual">
             <span>{`${title}`}</span> by&nbsp;<span>{`${author}`}</span>
           </h2>
-          <p className="my-4">{description}</p>
+          <p className="my-4 text-base">{description}</p>
         </div>
       </Link>
     </article>

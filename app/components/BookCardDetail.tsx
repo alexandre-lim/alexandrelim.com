@@ -22,7 +22,7 @@ function BookCardDetail({ to, title, author, summary, imgSrc }: BookdCardDetailP
             <h2 className="text-xl text-center md:text-left md:text-2xl font-recursive-bold font-recursive-semi-casual mb-4 group-hover:text-blue-500">
               <span>{`${title}`}</span> by&nbsp;<span>{`${author}`}</span>
             </h2>
-            <p>{summary}</p>
+            <p className="text-base">{summary}</p>
           </div>
         </div>
       </Link>
