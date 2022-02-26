@@ -27,21 +27,21 @@ function ArticleCard({ to, articleClassName, headerTag, title, summary, arrowTex
       <Link to={to} className="block h-full p-8">
         {headerTag === ArticleHeaderTag.h2 ? (
           <ArticleCardSecondTitle
-            className="group-hover:text-blue-500 text-xl font-recursive-semibold font-recursive-semi-casual"
+            className="group-hover:text-blue-500 text-xl font-recursive-bold font-recursive-semi-casual"
             title={title}
           />
         ) : (
           <ArticleCardThirdTitle
-            className="group-hover:text-blue-500 text-xl font-recursive-semibold font-recursive-semi-casual"
+            className="group-hover:text-blue-500 text-xl font-recursive-bold font-recursive-semi-casual"
             title={title}
           />
         )}
-        <div className="my-4">
+        <div className="my-4 text-base">
           <p>{summary}</p>
         </div>
         <div className="flex gap-1 hover:text-blue-500">
           <span className="font-recursive-semibold font-recursive-semi-casual">{arrowText}</span>
-          <DoubleArrowRightIcon height={16} width={16} className="hidden translate-y-1 group-hover:block" />
+          <DoubleArrowRightIcon height={16} width={16} className="hidden translate-y-1.5 group-hover:block" />
         </div>
       </Link>
     </article>

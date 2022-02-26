@@ -18,21 +18,19 @@ export default function Index() {
         <h2 className="self-center leading-tight text-3xl sm:text-4xl md:text-5xl text-black dark:text-white font-recursive-casual font-recursive-bold">
           Learn&nbsp;Practice&nbsp;Give
         </h2>
-        <p className="mt-16">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+        <p className="mt-16 text-justify">
+          Inspired by the <strong>Software Craftsmanship mindset</strong>, I successfully served my clients for{' '}
+          <strong>more than 5&nbsp;years</strong> using a variety of programming languages. I'm focused on improving my
+          craft and delivering quality software to achieve ambitious goals.
         </p>
         <div className="mt-8 mx-auto">
-          <ButtonLink to={ROUTES.experience} text={'See my journey'} />
+          <ButtonLink to={ROUTES.experience} text={'See my journey'} className="min-w-[170px] text-center" />
         </div>
       </section>
 
       <section>
         <HomePageSecondTitle title={'More than a job title'} />
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-8">
           <Avatar.Root className="flex items-center justify-center mx-auto overflow-hidden select-none w-20 h-20 rounded-full bg-black dark:bg-slate-100 bg-opacity-5">
             <Avatar.Image className="w-full h-full object-cover" src="" alt="" />
             <Avatar.Fallback className="text-indigo-500" delayMs={600}>
@@ -40,16 +38,15 @@ export default function Index() {
             </Avatar.Fallback>
           </Avatar.Root>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+        <p className="text-justify">
+          I'm a <strong>Software Engineer living in France.</strong> But, I don't limit my identity as a Software
+          Engineer or any job title. Sports played a crucial role in who I am today. I like reading non-fiction books,
+          and my best recommendation is Atomic Habits by James Clear. I'm more of an{' '}
+          <span className="font-recursive-bold">introvert.</span> High-stimulus environments affect me like kryptonite.
         </p>
         <div className="flex">
           <div className="mt-8 mx-auto">
-            <ButtonLink to={ROUTES.about} text={'About me'} />
+            <ButtonLink to={ROUTES.about} text={'About me'} className="min-w-[170px] text-center" />
           </div>
         </div>
       </section>

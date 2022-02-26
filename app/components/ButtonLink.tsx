@@ -3,9 +3,10 @@ import clsx from 'clsx';
 
 interface ButtonLinkProps extends LinkProps {
   text: string;
+  className: string;
 }
 
-function ButtonLink({ text, to }: ButtonLinkProps) {
+function ButtonLink({ text, to, className }: ButtonLinkProps) {
   return (
     <Link
       to={to}
@@ -16,6 +17,7 @@ function ButtonLink({ text, to }: ButtonLinkProps) {
         'hover:ring-2 hover:ring-offset-4',
         'focus-visible:ring-2 focus-visible:ring-offset-4',
         'dark:ring-offset-[color:var(--dark-color-background)] ',
+        className,
       )}
     >
       {text}
