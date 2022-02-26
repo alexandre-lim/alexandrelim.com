@@ -129,7 +129,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <MobileMenu />
       </MaxWidthWrapper>
-      <MaxWidthWrapper tag="main" className="mt-16 mb-24">
+      <MaxWidthWrapper tag="main" className="mt-16 mb-24 text-lg">
         {children}
       </MaxWidthWrapper>
       <footer className="mt-auto p-4">

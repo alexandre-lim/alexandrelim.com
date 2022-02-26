@@ -1,4 +1,4 @@
-import { TriangleRightIcon } from '@radix-ui/react-icons';
+import { ListIcon } from '~/components/ListIcon';
 
 export default function Index() {
   return (
@@ -21,14 +21,14 @@ export default function Index() {
           <ul className="pl-4 flex flex-col gap-2">
             <li>
               <div className="flex gap-2">
-                <TriangleRightIcon className="text-gray-800 text-opacity-80 min-w-[14px]" height={24} width={24} />
+                <ListIcon />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
               </div>
             </li>
             <li>
               <div className="flex gap-2">
-                <TriangleRightIcon className="text-gray-800 text-opacity-80 min-w-[14px]" height={24} width={24} />
+                <ListIcon />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.
               </div>
