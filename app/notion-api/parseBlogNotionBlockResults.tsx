@@ -1,4 +1,3 @@
-import { Link } from 'remix';
 import clsx from 'clsx';
 import { Language } from 'prism-react-renderer';
 
@@ -7,6 +6,7 @@ import { LinkExternal } from '~/components/LinkExternal';
 import { CodeBlock } from '~/components/CodeBlock';
 import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
 import { Annotations } from '~/types/notion/common';
+import { LinkInternal } from '~/components/LinkInternal';
 
 function parseBlogNotionBlockResults(blockResults: ListBlockChildrenResponseResults) {
   return blockResults.map((block, blockIndex) => {
@@ -56,13 +56,9 @@ function parseBlogNotionBlockResults(blockResults: ListBlockChildrenResponseResu
             const isInternalLink = url.hostname === 'www.alexandrelim.com';
 
             const link = isInternalLink ? (
-              <Link
-                key={`${id}_${richTextIndex}`}
-                to={url.pathname}
-                className="text-blue-500 transition-shadow hover:shadow-[0_2px_0_0_rgb(59_130_246_/_var(--tw-text-opacity))]"
-              >
+              <LinkInternal key={`${id}_${richTextIndex}`} to={url.pathname}>
                 {richText.text.content}
-              </Link>
+              </LinkInternal>
             ) : (
               <LinkExternal
                 key={`${id}_${richTextIndex}`}

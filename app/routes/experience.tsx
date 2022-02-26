@@ -5,8 +5,8 @@ import { ListIcon } from '~/components/ListIcon';
 import { techStackTagValues } from '~/utils/techStackTags';
 
 function buildImpactList(impacts: Array<string>) {
-  return impacts.map((impact) => (
-    <li>
+  return impacts.map((impact, index) => (
+    <li key={`${impact}_${index}`}>
       <div className="flex gap-2">
         <ListIcon />
         {impact}
@@ -16,7 +16,9 @@ function buildImpactList(impacts: Array<string>) {
 }
 
 function buildTechStackList(techStack: Array<string>) {
-  return techStack.map((techStackValue) => <Tag tagValue={techStackValue} className="bg-emerald-400 bg-opacity-60" />);
+  return techStack.map((techStackValue, index) => (
+    <Tag key={`${techStackValue}_${index}`} tagValue={techStackValue} className="bg-emerald-400 bg-opacity-60" />
+  ));
 }
 
 export default function Index() {

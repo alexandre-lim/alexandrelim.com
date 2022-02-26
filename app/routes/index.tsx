@@ -20,8 +20,8 @@ export default function Index() {
         </h2>
         <p className="mt-16 text-justify">
           Inspired by the <strong>Software Craftsmanship mindset</strong>, I successfully served my clients for{' '}
-          <strong>more than 5&nbsp;years</strong> using a variety of programming languages. I'm focused on improving my
-          craft and delivering quality software to achieve ambitious goals.
+          <strong>more than five&nbsp;years</strong> using a variety of programming languages. I'm focused on improving
+          my craft and delivering quality software to achieve ambitious goals.
         </p>
         <div className="mt-8 mx-auto">
           <ButtonLink to={ROUTES.experience} text={'See my journey'} className="min-w-[170px] text-center" />
