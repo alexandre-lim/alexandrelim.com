@@ -66,13 +66,15 @@ export default function CoursesReview() {
 
   return (
     <>
-      <div className="max-w-2xl mx-auto mb-12">
+      <div className="max-w-2xl mx-auto mb-12 text-justify">
+        <p className="mb-4">
+          As a professional, it's <strong>my responsibility to invest in my craft.</strong> But I also enjoy taking
+          lessons not related to my field, like The Marketing Seminar from Seth Godin.
+        </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+          You'll find some reviews of the courses I took, and if it sparks your interest, you might want to give it a
+          try. But I suggest you do some research before and prepare yourself.{' '}
+          <strong>The real difficulty is finishing a course and leveraging what you learn to benefit your life.</strong>
         </p>
       </div>
 

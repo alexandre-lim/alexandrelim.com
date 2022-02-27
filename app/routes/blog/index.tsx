@@ -50,13 +50,11 @@ export default function Index() {
 
   return (
     <>
-      <div className="max-w-2xl mx-auto mb-12">
+      <div className="max-w-2xl mx-auto mb-12 text-justify">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+          I write to balance all the learning and the constant chatting in my mind. It helps clear my mind. It's also a
+          way to <strong>apply what I learned and gain retention.</strong> I write for me, my future me, and people who
+          can benefit from it.
         </p>
       </div>
 
