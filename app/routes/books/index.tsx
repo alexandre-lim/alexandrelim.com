@@ -4,6 +4,7 @@ import type { LoaderFunction } from 'remix';
 import { ROUTES } from '~/routes';
 import { PageSeparator } from '~/components/PageSeparator';
 import { BookCardDetail } from '~/components/BookCardDetail';
+import { LinkExternal } from '~/components/LinkExternal';
 
 import { fetchBooksDatabase } from '~/notion-api/books';
 import { QueryDatabaseResponseListResults } from '~/types/notion/queryDatabaseResponseListResults';
@@ -58,13 +59,13 @@ export default function Books() {
 
   return (
     <>
-      <div className="max-w-2xl mx-auto mb-12">
+      <div className="max-w-2xl mx-auto mb-12 text-justify">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+          I mostly read nonfiction books. I'm taking notes to fight{' '}
+          <LinkExternal href="https://en.wikipedia.org/wiki/Forgetting_curve">the forgetting curve</LinkExternal> and
+          review them once in a while. I'm sharing them publicly as it may be helpful to someone. But{' '}
+          <strong>my notes are not a summary of the book.</strong> If you find them interesting, I encourage you to read
+          the whole book.
         </p>
       </div>
 

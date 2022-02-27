@@ -60,11 +60,9 @@ function parseBlogNotionBlockResults(blockResults: ListBlockChildrenResponseResu
                 {richText.text.content}
               </LinkInternal>
             ) : (
-              <LinkExternal
-                key={`${id}_${richTextIndex}`}
-                href={richText.text.link.url}
-                value={richText.text.content}
-              />
+              <LinkExternal key={`${id}_${richTextIndex}`} href={richText.text.link.url}>
+                {richText.text.content}
+              </LinkExternal>
             );
             paragraph.push(link);
           } else {

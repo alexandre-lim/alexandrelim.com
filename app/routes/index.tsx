@@ -39,7 +39,7 @@ export default function Index() {
           </Avatar.Root>
         </div>
         <p className="text-justify">
-          I'm a <strong>Software Engineer living in France.</strong> But, I don't limit my identity as a Software
+          I'm a <strong>Software Engineer living in France.</strong> But I don't limit my identity as a Software
           Engineer or any job title. Sports played a crucial role in who I am today. I like reading non-fiction books,
           and my best recommendation is Atomic Habits by James Clear. I'm more of an{' '}
           <span className="font-recursive-bold">introvert.</span> High-stimulus environments affect me like kryptonite.
