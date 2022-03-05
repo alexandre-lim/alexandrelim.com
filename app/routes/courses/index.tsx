@@ -2,15 +2,15 @@ import { LoaderFunction, useLoaderData } from 'remix';
 
 import { ROUTES } from '~/routes';
 import { PageSeparator } from '~/components/PageSeparator';
-import { CourseReviewDetailCard } from '~/components/CourseReviewDetailCard';
-import { fetchCoursesReviewDatabase } from '~/notion-api/coursesReview';
+import { CourseDetailCard } from '~/components/CourseDetailCard';
+import { fetchCoursesDatabase } from '~/notion-api/courses';
 import { QueryDatabaseResponseListResults } from '~/types/notion/queryDatabaseResponseListResults';
-import { CoursesReviewData } from '~/types/notion/coursesReview';
+import { CoursesData } from '~/types/notion/courses';
 
 export const loader: LoaderFunction = async () => {
-  const coursesReviewDatabaseQueryResponse = await fetchCoursesReviewDatabase();
+  const coursesDatabaseQueryResponse = await fetchCoursesDatabase();
 
-  const results = coursesReviewDatabaseQueryResponse.results as QueryDatabaseResponseListResults;
+  const results = coursesDatabaseQueryResponse.results as QueryDatabaseResponseListResults;
 
   return results.map((result) => {
     const { Published, Edited, Tags, Summary, Slug, Title, Author, Cover, Year_Formation, Cover_Alternative } =
@@ -22,11 +22,11 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export default function CoursesReview() {
-  const coursesReviewData: Array<CoursesReviewData> = useLoaderData();
+export default function Courses() {
+  const coursesData: Array<CoursesData> = useLoaderData();
 
-  const coursesReview = coursesReviewData.map((courseReview) => {
-    const { id, properties } = courseReview;
+  const courses = coursesData.map((course) => {
+    const { id, properties } = course;
     const slug = properties.Slug.select?.name;
     const author = properties.Author.select?.name || '';
 
@@ -52,9 +52,9 @@ export default function CoursesReview() {
     }
 
     return (
-      <CourseReviewDetailCard
+      <CourseDetailCard
         key={id}
-        to={`${ROUTES.coursesReview}/${slug}-${id}`}
+        to={`${ROUTES.courses}/${slug}-${id}`}
         title={title}
         author={author}
         imgSrc={imgSrc}
@@ -72,8 +72,8 @@ export default function CoursesReview() {
           lessons not related to my field, like The Marketing Seminar from Seth Godin.
         </p>
         <p>
-          You'll find some reviews of the courses I took, and if it sparks your interest, you might want to give it a
-          try. But I suggest you do some research before and prepare yourself.{' '}
+          You'll find some notes of the courses I took, and if it sparks your interest, you might want to give it a try.
+          But I suggest you do some research before and prepare yourself.{' '}
           <strong>The real difficulty is finishing a course and leveraging what you learn to benefit your life.</strong>
         </p>
       </div>
@@ -81,7 +81,7 @@ export default function CoursesReview() {
       <PageSeparator />
 
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] sm:grid-cols-[repeat(auto-fill,_minmax(400px,_1fr))] gap-8">
-        {coursesReview}
+        {courses}
       </div>
     </>
   );
