@@ -152,8 +152,8 @@ export default function Index() {
           <p>
             Learning never ends. It's a life journey. The infinite amount of knowledge always humbles me. But only
             learning is just motion—wasted potential power. I always try to apply valuable things I learned in my
-            everyday life. It could be by <LinkInternal to={ROUTES.blog}>writing</LinkInternal>, sharing a{' '}
-            <LinkInternal to={ROUTES.coursesReview}>course review</LinkInternal>, or starting a project.{' '}
+            everyday life. It could be by <LinkInternal to={ROUTES.blog}>writing</LinkInternal>, sharing my{' '}
+            <LinkInternal to={ROUTES.courses}>course notes</LinkInternal>, or starting a project.{' '}
             <strong>Action pointed in the right direction makes all the difference.</strong>
           </p>
         </section>

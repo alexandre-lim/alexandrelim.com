@@ -6,7 +6,7 @@ export default function CourseExample() {
     <>
       <div className="max-w-2xl mx-auto">
         <div className="mb-16 inline-block">
-          <LinkArrowLeft to={ROUTES.coursesReview} text={'Back to courses review'} />
+          <LinkArrowLeft to={ROUTES.courses} text={'Back to course notes'} />
         </div>
 
         <h2 className="text-xl md:text-4xl text-center font-recursive-bold font-recursive-semi-casual">Course title</h2>

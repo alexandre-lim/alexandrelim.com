@@ -5,7 +5,7 @@ import { ButtonLink } from '~/components/ButtonLink';
 import { LinkArrowRight } from '~/components/LinkArrowRight';
 import { ArticleCard, ArticleHeaderTag } from '~/components/ArticleCard';
 import { BookdCard } from '~/components/BookCard';
-import { CourseReviewCard } from '~/components/CourseReviewCard';
+import { CourseCard } from '~/components/CourseCard';
 
 function HomePageSecondTitle({ title }: { title: string }) {
   return <h2 className="mb-8 text-xl md:text-2xl font-recursive-bold font-recursive-semi-casual">{title}</h2>;
@@ -113,13 +113,13 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <HomePageSecondTitle title={'Courses review'} />
-          <LinkArrowRight to={ROUTES.coursesReview} text={'See courses review'}></LinkArrowRight>
+          <HomePageSecondTitle title={'Course notes'} />
+          <LinkArrowRight to={ROUTES.courses} text={'See course notes'}></LinkArrowRight>
         </div>
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
-          <CourseReviewCard
-            to={`${ROUTES.coursesReview}/course-example`}
+          <CourseCard
+            to={`${ROUTES.courses}/course-example`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}
             imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
@@ -127,8 +127,8 @@ export default function Index() {
             ratio={16 / 9}
           />
 
-          <CourseReviewCard
-            to={`${ROUTES.coursesReview}/course-example`}
+          <CourseCard
+            to={`${ROUTES.courses}/course-example`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}
             imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}

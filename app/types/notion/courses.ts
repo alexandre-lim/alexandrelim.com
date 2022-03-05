@@ -8,7 +8,7 @@ import {
   PropertyTitle,
 } from './property';
 
-export enum CoursesReviewProperties {
+export enum CoursesProperties {
   Title = 'Title',
   Status = 'Status',
   Slug = 'Slug',
@@ -19,7 +19,7 @@ export enum Status {
   Draft = 'Draft',
 }
 
-export interface CoursesReviewData {
+export interface CoursesData {
   id: string;
   properties: {
     Edited: PropertyLastEditedTime;
@@ -35,4 +35,4 @@ export interface CoursesReviewData {
   };
 }
 
-export type CourseReviewProperties = Omit<CoursesReviewData, 'id'>;
+export type CourseProperties = Omit<CoursesData, 'id'>;

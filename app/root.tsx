@@ -120,7 +120,7 @@ function Layout({ children }: { children: React.ReactNode }) {
               <HeaderNavLink to={ROUTES.books}>Book notes</HeaderNavLink>
             </li>
             <li>
-              <HeaderNavLink to={ROUTES.coursesReview}>Courses review</HeaderNavLink>
+              <HeaderNavLink to={ROUTES.courses}>Course notes</HeaderNavLink>
             </li>
           </ul>
         </nav>

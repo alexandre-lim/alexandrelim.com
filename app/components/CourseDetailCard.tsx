@@ -1,6 +1,6 @@
 import { Link, LinkProps } from 'remix';
 
-interface CourseReviewDetailCardProps extends LinkProps {
+interface CourseDetailCardProps extends LinkProps {
   title: string;
   author: string;
   imgSrc: string;
@@ -8,7 +8,7 @@ interface CourseReviewDetailCardProps extends LinkProps {
   description: string;
 }
 
-function CourseReviewDetailCard({ to, title, author, imgSrc, imgAlt, description }: CourseReviewDetailCardProps) {
+function CourseDetailCard({ to, title, author, imgSrc, imgAlt, description }: CourseDetailCardProps) {
   return (
     <article className="group w-full border rounded-lg shadow-md transition hover:-translate-y-1">
       <Link to={to} className="block h-full overflow-hidden p-2">
@@ -25,4 +25,4 @@ function CourseReviewDetailCard({ to, title, author, imgSrc, imgAlt, description
   );
 }
 
-export { CourseReviewDetailCard };
+export { CourseDetailCard };
