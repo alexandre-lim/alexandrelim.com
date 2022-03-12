@@ -8,7 +8,7 @@ import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildr
 import { Annotations } from '~/types/notion/common';
 import { LinkInternal } from '~/components/LinkInternal';
 
-function parseBlogNotionBlockResults(blockResults: ListBlockChildrenResponseResults) {
+function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults) {
   return blockResults.map((block, blockIndex) => {
     const { id, type } = block;
 
@@ -195,4 +195,4 @@ function getParagraphWithAnnotationsTags(annotations: Annotations, textContent: 
   return openHtmlTags.concat(closeHtmlTags);
 }
 
-export { parseBlogNotionBlockResults };
+export { parseNotionBlockResults };

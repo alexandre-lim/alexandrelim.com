@@ -8,7 +8,7 @@ import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildr
 import { fetchBlogArticleBlocks, fetchBlogArticleByPageId } from '~/notion-api/blog';
 import { ArticleProperties } from '~/types/notion/blog';
 import { GetPageResponse } from '~/types/notion/GetPageResponse';
-import { parseBlogNotionBlockResults } from '~/notion-api/parseBlogNotionBlockResults';
+import { parseNotionBlockResults } from '~/notion-api/parseNotionBlockResults';
 import { LastUpdated } from '~/components/LastUpdated';
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -47,7 +47,7 @@ export default function ArticleSlug() {
     articleTitle = articleData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseBlogNotionBlockResults(blockResults);
+  const blocks = parseNotionBlockResults(blockResults);
 
   return (
     <>
