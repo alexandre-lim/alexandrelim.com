@@ -92,20 +92,18 @@ export default function Index() {
 
         <div className='flex gap-8 flex-wrap md:flex-nowrap"'>
           <BookdCard
-            to={`${ROUTES.books}/book-example`}
+            to={`${ROUTES.books}/clean-code-8cabe006-6867-4073-8c87-5bb7c6a11dbf`}
             title={'Clean Code'}
             author={'Robert C. Martin'}
-            imgSrc={'https://miro.medium.com/max/1103/1*PKsDuPxNoKJyJvmlLc64qg.jpeg'}
+            imgSrc={'/assets/clean_code.jpeg'}
             ratio={16 / 9}
           />
 
           <BookdCard
-            to={`${ROUTES.books}/book-example`}
+            to={`${ROUTES.books}/atomic-habits-5b340c3d-66f9-455d-a0c9-2ee3e38ef13d`}
             title={'Atomic Habits'}
             author={'James Clear'}
-            imgSrc={
-              'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529153916l/40540502._SY475_.jpg'
-            }
+            imgSrc={'/assets/atomic_habits.jpeg'}
             ratio={16 / 9}
           />
         </div>
@@ -119,19 +117,19 @@ export default function Index() {
 
         <div className="flex gap-8 flex-wrap md:flex-nowrap">
           <CourseCard
-            to={`${ROUTES.courses}/course-example`}
-            title={'The Marketing Seminar'}
-            author={'Seth Godin'}
-            imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
-            imgAlt={'The Marketing Seminar certificate'}
+            to={`${ROUTES.courses}/css-for-javascript-developers-981de5a4-bf64-493c-a756-ddbb6a276fcf`}
+            title={'CSS for JavaScript Developers'}
+            author={'Josh Comeau'}
+            imgSrc={'/assets/css_for_js_certificate.png'}
+            imgAlt={'CSS for JavaScript Developers certificate'}
             ratio={16 / 9}
           />
 
           <CourseCard
-            to={`${ROUTES.courses}/course-example`}
+            to={`${ROUTES.courses}/the-marketing-seminar-dc2ca431-7c74-4aad-b99c-bc8bc671664e`}
             title={'The Marketing Seminar'}
             author={'Seth Godin'}
-            imgSrc={'https://certificates.akimbo.com/img/akimbo_certificate_share.jpg'}
+            imgSrc={'/assets/marketing_seminar_certificate.jpg'}
             imgAlt={'The Marketing Seminar certificate'}
             ratio={16 / 9}
           />
