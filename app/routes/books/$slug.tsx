@@ -1,6 +1,7 @@
 import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 import invariant from 'tiny-invariant';
+import type { ListBlockChildrenResponse, GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 import { ROUTES } from '~/routes';
 import { LinkArrowLeft } from '~/components/LinkArrowLeft';
@@ -8,8 +9,6 @@ import { LastUpdated } from '~/components/LastUpdated';
 import { fetchBookBlocks, fetchBookByPageId } from '~/notion-api/books';
 import { parseNotionBlockResults } from '~/notion-api/parseNotionBlockResults';
 import { BookProperties } from '~/types/notion/books';
-import { GetPageResponse } from '~/types/notion/GetPageResponse';
-import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, 'expected params.slug');
@@ -20,7 +19,10 @@ export const loader: LoaderFunction = async ({ params }) => {
   const pageId = slug.slice(slug.length - UUID_LENGTH);
 
   try {
-    const pageResponse = (await fetchBookByPageId(pageId)) as GetPageResponse;
+    const pageResponse = (await fetchBookByPageId(pageId)) as Extract<
+      GetPageResponse,
+      { properties: Record<string, unknown> }
+    >;
 
     const { Published, Edited, Tags, Slug, Title, Author } = pageResponse.properties;
 
@@ -28,9 +30,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
     const listBlockChildrenResponse = await fetchBookBlocks(pageId);
 
-    const blockResults = listBlockChildrenResponse.results as ListBlockChildrenResponseResults;
-
-    return [bookData, blockResults];
+    return [bookData, listBlockChildrenResponse];
   } catch (error) {
     throw new Response('Not Found', {
       status: 404,
@@ -39,7 +39,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ArticleSlug() {
-  const [bookData, blockResults]: [BookProperties, ListBlockChildrenResponseResults] = useLoaderData();
+  const [bookData, listBlockChildrenResponse]: [BookProperties, ListBlockChildrenResponse] = useLoaderData();
 
   const author = bookData.properties.Author.select?.name;
   let bookTitle = '';
@@ -48,7 +48,7 @@ export default function ArticleSlug() {
     bookTitle = bookData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseNotionBlockResults(blockResults);
+  const blocks = parseNotionBlockResults(listBlockChildrenResponse);
 
   return (
     <>

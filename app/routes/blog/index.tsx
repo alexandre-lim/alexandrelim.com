@@ -4,17 +4,19 @@ import type { LoaderFunction } from 'remix';
 import { ROUTES } from '~/routes';
 import { PageSeparator } from '~/components/PageSeparator';
 import { ArticleCard, ArticleHeaderTag } from '~/components/ArticleCard';
-import { QueryDatabaseResponseListResults } from '~/types/notion/queryDatabaseResponseListResults';
 import { fetchBlogDatabase } from '~/notion-api/blog';
 import { ArticlesData } from '~/types/notion/blog';
 
 export const loader: LoaderFunction = async () => {
   const blogDatabaseQueryResponse = await fetchBlogDatabase();
 
-  const results = blogDatabaseQueryResponse.results as QueryDatabaseResponseListResults;
+  const results = blogDatabaseQueryResponse.results;
 
-  return results.map((result) => {
+  return results.map((partialResult) => {
+    const result = partialResult as Extract<typeof partialResult, { properties: Record<string, unknown> }>;
+
     const { Published, Edited, Tags, Summary, Slug, Title } = result.properties;
+
     return { id: result.id, properties: { Published, Edited, Tags, Summary, Slug, Title } };
   });
 };

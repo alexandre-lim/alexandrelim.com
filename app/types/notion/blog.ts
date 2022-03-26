@@ -1,11 +1,11 @@
 import {
-  PropertyDate,
-  PropertyLastEditedTime,
-  PropertyMultiSelect,
-  PropertyRichText,
-  PropertySelect,
-  PropertyTitle,
-} from './property';
+  GetPageResponsePropertyValueDate,
+  GetPageResponsePropertyValueLastEditedTime,
+  GetPageResponsePropertyValueMultiSelect,
+  GetPageResponsePropertyValueRichText,
+  GetPageResponsePropertyValueSelect,
+  GetPageResponsePropertyValueTitle,
+} from './getPageResponse';
 
 export enum BlogProperties {
   Title = 'Title',
@@ -21,12 +21,12 @@ export enum Status {
 export interface ArticlesData {
   id: string;
   properties: {
-    Edited: PropertyLastEditedTime;
-    Published: PropertyDate;
-    Slug: PropertySelect;
-    Summary: PropertyRichText;
-    Tags: PropertyMultiSelect;
-    Title: PropertyTitle;
+    Edited: GetPageResponsePropertyValueLastEditedTime;
+    Published: GetPageResponsePropertyValueDate;
+    Slug: GetPageResponsePropertyValueSelect;
+    Summary: GetPageResponsePropertyValueRichText;
+    Tags: GetPageResponsePropertyValueMultiSelect;
+    Title: GetPageResponsePropertyValueTitle;
   };
 }
 

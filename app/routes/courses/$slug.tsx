@@ -1,15 +1,14 @@
 import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 import invariant from 'tiny-invariant';
+import type { ListBlockChildrenResponse, GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 import { ROUTES } from '~/routes';
 import { LinkArrowLeft } from '~/components/LinkArrowLeft';
 import { LastUpdated } from '~/components/LastUpdated';
-import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
 import { fetchCourseBlocks, fetchCourseByPageId } from '~/notion-api/courses';
 import { parseNotionBlockResults } from '~/notion-api/parseNotionBlockResults';
 import { CourseProperties } from '~/types/notion/courses';
-import { GetPageResponse } from '~/types/notion/GetPageResponse';
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, 'expected params.slug');
@@ -20,7 +19,10 @@ export const loader: LoaderFunction = async ({ params }) => {
   const pageId = slug.slice(slug.length - UUID_LENGTH);
 
   try {
-    const pageResponse = (await fetchCourseByPageId(pageId)) as GetPageResponse;
+    const pageResponse = (await fetchCourseByPageId(pageId)) as Extract<
+      GetPageResponse,
+      { properties: Record<string, unknown> }
+    >;
 
     const { Published, Edited, Tags, Slug, Title, Author, Year_Formation } = pageResponse.properties;
 
@@ -30,9 +32,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
     const listBlockChildrenResponse = await fetchCourseBlocks(pageId);
 
-    const blockResults = listBlockChildrenResponse.results as ListBlockChildrenResponseResults;
-
-    return [courseData, blockResults];
+    return [courseData, listBlockChildrenResponse];
   } catch (error) {
     throw new Response('Not Found', {
       status: 404,
@@ -41,7 +41,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ArticleSlug() {
-  const [courseData, blockResults]: [CourseProperties, ListBlockChildrenResponseResults] = useLoaderData();
+  const [courseData, listBlockChildrenResponse]: [CourseProperties, ListBlockChildrenResponse] = useLoaderData();
 
   const author = courseData.properties.Author.select?.name;
   let courseTitle = '';
@@ -50,7 +50,7 @@ export default function ArticleSlug() {
     courseTitle = courseData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseNotionBlockResults(blockResults);
+  const blocks = parseNotionBlockResults(listBlockChildrenResponse);
 
   return (
     <>

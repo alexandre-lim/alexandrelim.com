@@ -1,13 +1,12 @@
 import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 import invariant from 'tiny-invariant';
+import type { ListBlockChildrenResponse, GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 
 import { ROUTES } from '~/routes';
 import { LinkArrowLeft } from '~/components/LinkArrowLeft';
-import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
 import { fetchBlogArticleBlocks, fetchBlogArticleByPageId } from '~/notion-api/blog';
 import { ArticleProperties } from '~/types/notion/blog';
-import { GetPageResponse } from '~/types/notion/GetPageResponse';
 import { parseNotionBlockResults } from '~/notion-api/parseNotionBlockResults';
 import { LastUpdated } from '~/components/LastUpdated';
 
@@ -20,7 +19,10 @@ export const loader: LoaderFunction = async ({ params }) => {
   const pageId = slug.slice(slug.length - UUID_LENGTH);
 
   try {
-    const pageResponse = (await fetchBlogArticleByPageId(pageId)) as GetPageResponse;
+    const pageResponse = (await fetchBlogArticleByPageId(pageId)) as Extract<
+      GetPageResponse,
+      { properties: Record<string, unknown> }
+    >;
 
     const { Published, Edited, Tags, Summary, Slug, Title } = pageResponse.properties;
 
@@ -28,9 +30,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
     const listBlockChildrenResponse = await fetchBlogArticleBlocks(pageId);
 
-    const blockResults = listBlockChildrenResponse.results as ListBlockChildrenResponseResults;
-
-    return [articleData, blockResults];
+    return [articleData, listBlockChildrenResponse];
   } catch (error) {
     throw new Response('Not Found', {
       status: 404,
@@ -39,7 +39,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ArticleSlug() {
-  const [articleData, blockResults]: [ArticleProperties, ListBlockChildrenResponseResults] = useLoaderData();
+  const [articleData, listBlockChildrenResponse]: [ArticleProperties, ListBlockChildrenResponse] = useLoaderData();
 
   let articleTitle = '';
 
@@ -47,7 +47,7 @@ export default function ArticleSlug() {
     articleTitle = articleData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseNotionBlockResults(blockResults);
+  const blocks = parseNotionBlockResults(listBlockChildrenResponse);
 
   return (
     <>

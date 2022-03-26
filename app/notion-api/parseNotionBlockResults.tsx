@@ -1,15 +1,17 @@
 import clsx from 'clsx';
 import { Language } from 'prism-react-renderer';
+import type { ListBlockChildrenResponse } from '@notionhq/client/build/src/api-endpoints';
 
 import { ImageContent } from '~/components/ImageContent';
 import { LinkExternal } from '~/components/LinkExternal';
 import { CodeBlock } from '~/components/CodeBlock';
-import { ListBlockChildrenResponseResults } from '~/types/notion/listBlockChildrenResponseResults';
-import { Annotations } from '~/types/notion/common';
 import { LinkInternal } from '~/components/LinkInternal';
+import { Annotations } from '~/types/notion/common';
 
-function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults) {
-  return blockResults.map((block, blockIndex) => {
+function parseNotionBlockResults(listBlockChildrenResponse: ListBlockChildrenResponse) {
+  return listBlockChildrenResponse.results.map((partialBlock, blockIndex) => {
+    const block = partialBlock as Extract<typeof partialBlock, { type: string }>;
+
     const { id, type } = block;
 
     const result = [];
@@ -20,7 +22,7 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults)
           key={`${id}_${blockIndex}`}
           className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual"
         >
-          {block.heading_1.text[0].plain_text}
+          {block.heading_1.rich_text[0].plain_text}
         </h3>,
       );
     }
@@ -31,7 +33,7 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults)
           key={`${id}_${blockIndex}`}
           className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual"
         >
-          {block.heading_2.text[0].plain_text}
+          {block.heading_2.rich_text[0].plain_text}
         </h3>,
       );
     }
@@ -42,14 +44,14 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults)
           key={`${id}_${blockIndex}`}
           className="text-xl md:text-2xl font-recursive-semibold font-recursive-semi-casual"
         >
-          {block.heading_3.text[0].plain_text}
+          {block.heading_3.rich_text[0].plain_text}
         </h3>,
       );
     }
 
-    if (type === 'paragraph' && block.paragraph.text.length > 0) {
+    if (type === 'paragraph' && block.paragraph.rich_text.length > 0) {
       const paragraph: Array<string | JSX.Element> = [];
-      block.paragraph.text.map((richText, richTextIndex) => {
+      block.paragraph.rich_text.map((richText, richTextIndex) => {
         if (richText.type === 'text') {
           if (richText.text.link) {
             const url = new URL(richText.text.link.url);
@@ -111,7 +113,7 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults)
       }
     }
 
-    if (type === 'code' && block.code.text?.[0]?.type === 'text') {
+    if (type === 'code' && block.code.rich_text?.[0]?.type === 'text') {
       let language = block.code.language as Language;
 
       if (
@@ -122,21 +124,23 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults)
         language = block.code.caption[0].plain_text as Language;
       }
 
-      result.push(<CodeBlock key={`${id}_${blockIndex}`} code={block.code.text[0].text.content} language={language} />);
+      result.push(
+        <CodeBlock key={`${id}_${blockIndex}`} code={block.code.rich_text[0].text.content} language={language} />,
+      );
     }
 
-    if (type === 'quote' && block.quote.text?.[0]?.type === 'text') {
+    if (type === 'quote' && block.quote.rich_text?.[0]?.type === 'text') {
       result.push(
         <blockquote
           key={`${id}_${blockIndex}`}
           className="bg-gray-100 dark:bg-gray-600 p-4 border-l-4 rounded-r-lg font-recursive-slant-max"
         >
-          {block.quote.text[0].text.content}
+          {block.quote.rich_text[0].text.content}
         </blockquote>,
       );
     }
 
-    if (type === 'callout' && block.callout.text?.[0]?.type === 'text') {
+    if (type === 'callout' && block.callout.rich_text?.[0]?.type === 'text') {
       if (block.callout.icon?.type === 'emoji') {
         const isInfo = 'ℹ️' === block.callout.icon.emoji;
         const isLightBulb = '💡' === block.callout.icon.emoji;
@@ -154,7 +158,7 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponseResults)
               isDanger && 'bg-red-200 dark:bg-red-600 border-red-300',
             )}
           >
-            {block.callout.text[0].text.content}
+            {block.callout.rich_text[0].text.content}
           </div>,
         );
       }
