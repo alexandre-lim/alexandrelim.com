@@ -1,12 +1,12 @@
 import {
-  PropertyDate,
-  PropertyFiles,
-  PropertyLastEditedTime,
-  PropertyMultiSelect,
-  PropertyRichText,
-  PropertySelect,
-  PropertyTitle,
-} from './property';
+  GetPageResponsePropertyValueDate,
+  GetPageResponsePropertyValueLastEditedTime,
+  GetPageResponsePropertyValueMultiSelect,
+  GetPageResponsePropertyValueRichText,
+  GetPageResponsePropertyValueSelect,
+  GetPageResponsePropertyValueTitle,
+  GetPageResponsePropertyValueFiles,
+} from './getPageResponse';
 
 export enum BooksProperties {
   Title = 'Title',
@@ -22,14 +22,14 @@ export enum Status {
 export interface BooksData {
   id: string;
   properties: {
-    Edited: PropertyLastEditedTime;
-    Published: PropertyDate;
-    Slug: PropertySelect;
-    Summary: PropertyRichText;
-    Tags: PropertyMultiSelect;
-    Title: PropertyTitle;
-    Author: PropertySelect;
-    Cover: PropertyFiles;
+    Edited: GetPageResponsePropertyValueLastEditedTime;
+    Published: GetPageResponsePropertyValueDate;
+    Slug: GetPageResponsePropertyValueSelect;
+    Summary: GetPageResponsePropertyValueRichText;
+    Tags: GetPageResponsePropertyValueMultiSelect;
+    Title: GetPageResponsePropertyValueTitle;
+    Author: GetPageResponsePropertyValueSelect;
+    Cover: GetPageResponsePropertyValueFiles;
   };
 }
 

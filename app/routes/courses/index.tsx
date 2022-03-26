@@ -4,17 +4,19 @@ import { ROUTES } from '~/routes';
 import { PageSeparator } from '~/components/PageSeparator';
 import { CourseDetailCard } from '~/components/CourseDetailCard';
 import { fetchCoursesDatabase } from '~/notion-api/courses';
-import { QueryDatabaseResponseListResults } from '~/types/notion/queryDatabaseResponseListResults';
 import { CoursesData } from '~/types/notion/courses';
 
 export const loader: LoaderFunction = async () => {
   const coursesDatabaseQueryResponse = await fetchCoursesDatabase();
 
-  const results = coursesDatabaseQueryResponse.results as QueryDatabaseResponseListResults;
+  const results = coursesDatabaseQueryResponse.results;
 
-  return results.map((result) => {
+  return results.map((partialResult) => {
+    const result = partialResult as Extract<typeof partialResult, { properties: Record<string, unknown> }>;
+
     const { Published, Edited, Tags, Summary, Slug, Title, Author, Cover, Year_Formation, Cover_Alternative } =
       result.properties;
+
     return {
       id: result.id,
       properties: { Published, Edited, Tags, Summary, Slug, Title, Author, Cover, Year_Formation, Cover_Alternative },

@@ -7,16 +7,18 @@ import { BookCardDetail } from '~/components/BookCardDetail';
 import { LinkExternal } from '~/components/LinkExternal';
 
 import { fetchBooksDatabase } from '~/notion-api/books';
-import { QueryDatabaseResponseListResults } from '~/types/notion/queryDatabaseResponseListResults';
 import { BooksData } from '~/types/notion/books';
 
 export const loader: LoaderFunction = async () => {
   const booksDatabaseQueryResponse = await fetchBooksDatabase();
 
-  const results = booksDatabaseQueryResponse.results as QueryDatabaseResponseListResults;
+  const results = booksDatabaseQueryResponse.results;
 
-  return results.map((result) => {
+  return results.map((partialResult) => {
+    const result = partialResult as Extract<typeof partialResult, { properties: Record<string, unknown> }>;
+
     const { Published, Edited, Tags, Summary, Slug, Title, Author, Cover } = result.properties;
+
     return { id: result.id, properties: { Published, Edited, Tags, Summary, Slug, Title, Author, Cover } };
   });
 };

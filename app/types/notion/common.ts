@@ -1,11 +1,3 @@
-export type IdRequest = string | string;
-
-export type EmptyObject = Record<string, never>;
-
-export type TextRequest = string;
-
-export type StringRequest = string;
-
 export type Color =
   | 'default'
   | 'gray'
