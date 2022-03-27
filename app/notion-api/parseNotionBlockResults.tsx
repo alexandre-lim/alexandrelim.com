@@ -9,6 +9,8 @@ import { LinkInternal } from '~/components/LinkInternal';
 import { Annotations } from '~/types/notion/common';
 
 function parseNotionBlockResults(listBlockChildrenResponse: ListBlockChildrenResponse) {
+  let buildUnorderedListHtmlTags: string[] = [];
+
   return listBlockChildrenResponse.results.map((partialBlock, blockIndex) => {
     const block = partialBlock as Extract<typeof partialBlock, { type: string }>;
 
@@ -110,6 +112,32 @@ function parseNotionBlockResults(listBlockChildrenResponse: ListBlockChildrenRes
 
       if (block.image.type === 'external') {
         result.push(<ImageContent src={block.image.external.url} caption={caption} key={`${id}_${blockIndex}`} />);
+      }
+    }
+
+    if (type === 'bulleted_list_item') {
+      if (buildUnorderedListHtmlTags.length === 0) {
+        buildUnorderedListHtmlTags.push('<ul class="pl-8 -mt-4 flex flex-col gap-2 list-disc">');
+      }
+
+      if (block.bulleted_list_item.rich_text[0].type === 'text') {
+        buildUnorderedListHtmlTags.push(
+          `<li><div class="flex gap-2">${block.bulleted_list_item.rich_text[0].text.content}</div></li>`,
+        );
+      }
+
+      const nextPartialBlock = listBlockChildrenResponse.results[blockIndex + 1];
+      const nextBlock = nextPartialBlock as Extract<typeof nextPartialBlock, { type: string }>;
+
+      if (typeof nextBlock === 'undefined' || nextBlock.type !== 'bulleted_list_item') {
+        buildUnorderedListHtmlTags.push('</ul>');
+        result.push(
+          <span
+            dangerouslySetInnerHTML={{ __html: buildUnorderedListHtmlTags.join('') }}
+            key={`${id}_${blockIndex}`}
+          />,
+        );
+        buildUnorderedListHtmlTags = [];
       }
     }
 
