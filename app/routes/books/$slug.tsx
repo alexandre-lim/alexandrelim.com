@@ -30,7 +30,11 @@ export const loader: LoaderFunction = async ({ params }) => {
 
     const listBlockChildrenResponse = await fetchBookBlocks(pageId);
 
-    return [bookData, listBlockChildrenResponse];
+    const blockResults: ListBlockChildrenResponse['results'] = [];
+
+    listBlockChildrenResponse.forEach((block) => blockResults.push(...block.results));
+
+    return [bookData, blockResults];
   } catch (error) {
     throw new Response('Not Found', {
       status: 404,
@@ -39,7 +43,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ArticleSlug() {
-  const [bookData, listBlockChildrenResponse]: [BookProperties, ListBlockChildrenResponse] = useLoaderData();
+  const [bookData, blockResults]: [BookProperties, ListBlockChildrenResponse['results']] = useLoaderData();
 
   const author = bookData.properties.Author.select?.name;
   let bookTitle = '';
@@ -48,7 +52,7 @@ export default function ArticleSlug() {
     bookTitle = bookData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseNotionBlockResults(listBlockChildrenResponse);
+  const blocks = parseNotionBlockResults(blockResults);
 
   return (
     <>

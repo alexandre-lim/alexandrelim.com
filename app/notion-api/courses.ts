@@ -1,5 +1,6 @@
 import { Client } from '@notionhq/client';
 import { CoursesProperties, Status } from '~/types/notion/courses';
+import { fetchBlocks } from './common';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const COURSES_DATABASE_ID = '3eacb9cf91ec4dbf81b2d866d98b27fc';
@@ -25,10 +26,8 @@ async function fetchCourseByPageId(pageId: string) {
   return await notion.pages.retrieve({ page_id: pageId });
 }
 
-async function fetchCourseBlocks(pageBlockId: string) {
-  return await notion.blocks.children.list({
-    block_id: pageBlockId,
-  });
+function fetchCourseBlocks(pageBlockId: string) {
+  return fetchBlocks(pageBlockId);
 }
 
 function getPropertyStatusFilter() {

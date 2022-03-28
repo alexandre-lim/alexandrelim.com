@@ -8,10 +8,10 @@ import { CodeBlock } from '~/components/CodeBlock';
 import { LinkInternal } from '~/components/LinkInternal';
 import { Annotations } from '~/types/notion/common';
 
-function parseNotionBlockResults(listBlockChildrenResponse: ListBlockChildrenResponse) {
+function parseNotionBlockResults(blockResults: ListBlockChildrenResponse['results']) {
   let buildUnorderedListHtmlTags: string[] = [];
 
-  return listBlockChildrenResponse.results.map((partialBlock, blockIndex) => {
+  return blockResults.map((partialBlock, blockIndex) => {
     const block = partialBlock as Extract<typeof partialBlock, { type: string }>;
 
     const { id, type } = block;
@@ -126,7 +126,7 @@ function parseNotionBlockResults(listBlockChildrenResponse: ListBlockChildrenRes
         );
       }
 
-      const nextPartialBlock = listBlockChildrenResponse.results[blockIndex + 1];
+      const nextPartialBlock = blockResults[blockIndex + 1];
       const nextBlock = nextPartialBlock as Extract<typeof nextPartialBlock, { type: string }>;
 
       if (typeof nextBlock === 'undefined' || nextBlock.type !== 'bulleted_list_item') {
