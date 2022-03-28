@@ -30,7 +30,11 @@ export const loader: LoaderFunction = async ({ params }) => {
 
     const listBlockChildrenResponse = await fetchBlogArticleBlocks(pageId);
 
-    return [articleData, listBlockChildrenResponse];
+    const blockResults: ListBlockChildrenResponse['results'] = [];
+
+    listBlockChildrenResponse.forEach((block) => blockResults.push(...block.results));
+
+    return [articleData, blockResults];
   } catch (error) {
     throw new Response('Not Found', {
       status: 404,
@@ -39,7 +43,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ArticleSlug() {
-  const [articleData, listBlockChildrenResponse]: [ArticleProperties, ListBlockChildrenResponse] = useLoaderData();
+  const [articleData, blockResults]: [ArticleProperties, ListBlockChildrenResponse['results']] = useLoaderData();
 
   let articleTitle = '';
 
@@ -47,7 +51,7 @@ export default function ArticleSlug() {
     articleTitle = articleData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseNotionBlockResults(listBlockChildrenResponse);
+  const blocks = parseNotionBlockResults(blockResults);
 
   return (
     <>

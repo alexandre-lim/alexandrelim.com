@@ -1,5 +1,6 @@
 import { Client } from '@notionhq/client';
 import { BooksProperties, Status } from '~/types/notion/books';
+import { fetchBlocks } from './common';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const BOOKS_DATABASE_ID = '9442969405fa49c4800f9523cde7a906';
@@ -25,10 +26,8 @@ async function fetchBookByPageId(pageId: string) {
   return await notion.pages.retrieve({ page_id: pageId });
 }
 
-async function fetchBookBlocks(pageBlockId: string) {
-  return await notion.blocks.children.list({
-    block_id: pageBlockId,
-  });
+function fetchBookBlocks(pageBlockId: string) {
+  return fetchBlocks(pageBlockId);
 }
 
 function getPropertyStatusFilter() {

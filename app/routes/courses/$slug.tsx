@@ -32,7 +32,11 @@ export const loader: LoaderFunction = async ({ params }) => {
 
     const listBlockChildrenResponse = await fetchCourseBlocks(pageId);
 
-    return [courseData, listBlockChildrenResponse];
+    const blockResults: ListBlockChildrenResponse['results'] = [];
+
+    listBlockChildrenResponse.forEach((block) => blockResults.push(...block.results));
+
+    return [courseData, blockResults];
   } catch (error) {
     throw new Response('Not Found', {
       status: 404,
@@ -41,7 +45,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ArticleSlug() {
-  const [courseData, listBlockChildrenResponse]: [CourseProperties, ListBlockChildrenResponse] = useLoaderData();
+  const [courseData, blockResults]: [CourseProperties, ListBlockChildrenResponse['results']] = useLoaderData();
 
   const author = courseData.properties.Author.select?.name;
   let courseTitle = '';
@@ -50,7 +54,7 @@ export default function ArticleSlug() {
     courseTitle = courseData.properties.Title.title[0].text.content;
   }
 
-  const blocks = parseNotionBlockResults(listBlockChildrenResponse);
+  const blocks = parseNotionBlockResults(blockResults);
 
   return (
     <>

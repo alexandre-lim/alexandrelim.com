@@ -1,5 +1,6 @@
 import { Client } from '@notionhq/client';
 import { BlogProperties, Status } from '~/types/notion/blog';
+import { fetchBlocks } from './common';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const BLOG_DATABASE_ID = '38ca841b0dbe4688acbdc215c1d96780';
@@ -25,10 +26,8 @@ async function fetchBlogArticleByPageId(pageId: string) {
   return await notion.pages.retrieve({ page_id: pageId });
 }
 
-async function fetchBlogArticleBlocks(pageBlockId: string) {
-  return await notion.blocks.children.list({
-    block_id: pageBlockId,
-  });
+function fetchBlogArticleBlocks(pageBlockId: string) {
+  return fetchBlocks(pageBlockId);
 }
 
 function getPropertyStatusFilter() {
