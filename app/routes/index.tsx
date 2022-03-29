@@ -57,29 +57,24 @@ export default function Index() {
           <LinkArrowRight to={ROUTES.blog} text={'See the blog'}></LinkArrowRight>
         </div>
 
-        <div className="flex gap-8 flex-wrap md:flex-nowrap">
+        <div className="flex flex-col gap-8">
           <ArticleCard
-            to={`${ROUTES.blog}/article-example`}
-            articleClassName="md:max-w-xs"
+            to={`${ROUTES.blog}/feedback-from-building-my-website-665d38aa-9021-4e8c-b3fc-1fe3e0987454`}
             headerTag={ArticleHeaderTag.h3}
-            title="Article Title"
+            title="Feedback from building my website"
             arrowText="Read More"
-            summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat."
+            summary="Building a website from scratch in your spare time is no easy fit, even with coding skills.
+            Why is that? Because it's not just about writing code.
+            Here, I'll share my feedback on making my website with some pieces of advice."
           />
 
           <ArticleCard
-            to={`${ROUTES.blog}/article-example`}
-            articleClassName="md:max-w-xs"
+            to={`${ROUTES.blog}/writing-for-myself-05223140-84e5-401b-bc76-36c5fa95c6f0`}
             headerTag={ArticleHeaderTag.h3}
-            title="Article Title"
+            title="Writing for Myself"
             arrowText="Read More"
-            summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum."
+            summary="Writing is hard. I like the idea of writing but doing it over a long time with care is just another beast.
+            There are many times I started but then stopped. This time, I'll try another approach. Writing for myself."
           />
         </div>
       </section>
