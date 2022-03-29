@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { DoubleArrowRightIcon } from '@radix-ui/react-icons';
 
 interface ArticleCardProps extends LinkProps {
-  articleClassName?: string;
   headerTag: ArticleHeaderTag;
   title: string;
   summary: string;
@@ -19,11 +18,9 @@ export enum ArticleHeaderTag {
   h3 = 'h3',
 }
 
-function ArticleCard({ to, articleClassName, headerTag, title, summary, arrowText }: ArticleCardProps) {
+function ArticleCard({ to, className, headerTag, title, summary, arrowText }: ArticleCardProps) {
   return (
-    <article
-      className={clsx('group border rounded-lg flex-auto shadow-md transition hover:-translate-y-1', articleClassName)}
-    >
+    <article className={clsx('group border rounded-lg flex-auto shadow-md transition hover:-translate-y-1', className)}>
       <Link to={to} className="block h-full p-8">
         {headerTag === ArticleHeaderTag.h2 ? (
           <ArticleCardSecondTitle
