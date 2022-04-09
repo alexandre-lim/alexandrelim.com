@@ -20,7 +20,13 @@ export enum ArticleHeaderTag {
 
 function ArticleCard({ to, className, headerTag, title, summary, arrowText }: ArticleCardProps) {
   return (
-    <article className={clsx('group border rounded-lg flex-auto shadow-md transition hover:-translate-y-1', className)}>
+    <article
+      className={clsx(
+        'group border rounded-lg flex-auto shadow-md transition hover:-translate-y-1',
+        'dark:border-none dark:bg-[color:var(--dark-block-color-background)]',
+        className,
+      )}
+    >
       <Link to={to} className="block h-full p-8">
         {headerTag === ArticleHeaderTag.h2 ? (
           <ArticleCardSecondTitle

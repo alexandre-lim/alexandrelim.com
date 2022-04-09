@@ -10,7 +10,12 @@ interface BookdCardDetailProps extends LinkProps {
 
 function BookCardDetail({ to, title, author, summary, imgSrc }: BookdCardDetailProps) {
   return (
-    <article className="group max-w-4xl w-full mx-auto border shadow-sm transition hover:-translate-y-1">
+    <article
+      className={clsx(
+        'group max-w-4xl w-full mx-auto border rounded-lg shadow-sm transition hover:-translate-y-1',
+        'dark:border-none dark:bg-[color:var(--dark-block-color-background)]',
+      )}
+    >
       <Link to={to} className="block h-full p-6 overflow-hidden">
         <div className="flex flex-col items-baseline gap-8 md:flex-row">
           <img
