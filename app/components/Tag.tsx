@@ -7,7 +7,9 @@ interface TagProps {
 
 function Tag({ tagValue, className }: TagProps) {
   return (
-    <span className={clsx('inline-block text-sm border rounded-lg px-3 py-1 mr-2 mb-2', className)}>{tagValue}</span>
+    <span className={clsx('inline-block text-sm border rounded-lg px-3 py-1 mr-2 mb-2 dark:border-none', className)}>
+      {tagValue}
+    </span>
   );
 }
 

@@ -3,6 +3,7 @@
   --light-color-background: hsl(40, 100%, 99%);
   --dark-color-foreground: hsl(0, 0%, 100%);
   --dark-color-background: hsl(210, 30%, 8%);
+  --dark-block-color-background: hsl(208, 25%, 10.5%);
   --color-backdrop: hsl(220deg 5% 40% / 0.8);
   --font-body: 'Recursive', -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto, Arial, sans-serif, system-ui,
     'Apple Color Emoji', 'Segoe UI Emoji';

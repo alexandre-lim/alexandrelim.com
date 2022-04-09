@@ -1,4 +1,5 @@
 import { Link, LinkProps } from 'remix';
+import clsx from 'clsx';
 
 interface CourseDetailCardProps extends LinkProps {
   title: string;
@@ -10,7 +11,12 @@ interface CourseDetailCardProps extends LinkProps {
 
 function CourseDetailCard({ to, title, author, imgSrc, imgAlt, description }: CourseDetailCardProps) {
   return (
-    <article className="group w-full border rounded-lg shadow-md transition hover:-translate-y-1">
+    <article
+      className={clsx(
+        'group w-full border rounded-lg shadow-md transition hover:-translate-y-1',
+        'dark:border-none dark:bg-[color:var(--dark-block-color-background)]',
+      )}
+    >
       <Link to={to} className="block h-full overflow-hidden p-2">
         <img className="object-contain w-full h-60 rounded-t-lg" src={imgSrc} alt={imgAlt} />
 
