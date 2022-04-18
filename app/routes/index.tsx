@@ -53,7 +53,7 @@ export default function Index() {
 
       <section>
         <div className="flex justify-between items-baseline">
-          <HomePageSecondTitle title={'Newest articles'} />
+          <HomePageSecondTitle title={'Articles'} />
           <LinkArrowRight to={ROUTES.blog} text={'See the blog'}></LinkArrowRight>
         </div>
 
