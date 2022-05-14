@@ -23,11 +23,11 @@ function buildTechStackList(techStack: Array<string>) {
 
 export default function Index() {
   const yousignImpacts = [
-    'Participated in designing features and conception',
+    'Worked in a Squad Team and used Agile methodologies to deliver fast and reliable features',
     'Developed an Advanced Electronic Signature feature in a feature\u00A0team',
     'Maintained the application in response to users feedback and Sentry\u00A0reports',
     "Improved software quality by introducing testing strategies to accomplish the company's OKRs",
-    'Contributed in the scale of the front-end guild from 3 to 10 developers',
+    'Contributed to the scale of the front-end guild from 3 to 10 developers',
   ];
   const yousignTechStack = [
     techStackTagValues.react.value,

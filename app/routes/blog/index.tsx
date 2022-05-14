@@ -55,8 +55,8 @@ export default function Index() {
       <div className="max-w-2xl mx-auto mb-12 text-justify">
         <p>
           I write to balance all the learning and the constant chatting in my mind. It helps clear my mind. It's also a
-          way to <strong>apply what I learned and gain retention.</strong> I write for me, my future me, and people who
-          can benefit from it.
+          way to <strong>apply what I learned and gain retention.</strong> I write for me, my future me, and the people
+          who can benefit from it.
         </p>
       </div>
 

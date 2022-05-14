@@ -74,8 +74,8 @@ export default function Courses() {
           lessons not related to my field, like The Marketing Seminar from Seth Godin.
         </p>
         <p>
-          You'll find some notes of the courses I took, and if it sparks your interest, you might want to give it a try.
-          But I suggest you do some research before and prepare yourself.{' '}
+          You'll find some notes of the courses I took, and if it sparks your interest, you might want to give them a
+          try. But I suggest you do some research before and prepare yourself.{' '}
           <strong>The real difficulty is finishing a course and leveraging what you learn to benefit your life.</strong>
         </p>
       </div>

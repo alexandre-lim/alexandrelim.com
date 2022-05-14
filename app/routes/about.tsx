@@ -38,7 +38,7 @@ export default function Index() {
           <p>
             Only in my early twenties did I find that I was an <strong>introvert.</strong> I didn't know about that
             word. It changed my life for the better. Now, I know I have a different way of interacting with people. I
-            learned to appreciate my introvert traits and make them my strength.
+            learned to appreciate my introverted traits and make them my strength.
           </p>
         </section>
 
@@ -64,18 +64,18 @@ export default function Index() {
           </p>
 
           <p className="mb-4">
-            There I met demon coaches. I never trained so hard and never been yelled so hard. Looking back, joining the
-            club was <span className="font-recursive-bold">one of the best choices I made in my life.</span> I'm glad I
-            did not give up the first days. I learned so much from gaining control over my body and mind to values like{' '}
-            <strong>self-respect</strong> and <strong>teamwork.</strong>
+            There I met "demon coaches". I had never trained so hard and never been yelled so hard. Looking back,
+            joining the club was <span className="font-recursive-bold">one of the best choices I made in my life.</span>{' '}
+            I'm glad I did not give up the first days. I learned so much from gaining control over my body and mind to
+            values like <strong>self-respect</strong> and <strong>teamwork.</strong>
           </p>
 
           <p className="mb-4">
-            After three years of battle, I stopped Volleyball, and I joined a Badminton club. It was also near my home,
-            and I thought I could relax. Well, it didn't happen. I met another demon coach, but strangely, I was glad
-            this time. From my volleyball experiences, I learned to{' '}
+            After three years of battle, I stopped playing Volleyball, and I joined a Badminton club. It was also near
+            my home, and I thought I could relax. Well, it didn't happen. I met another "demon coach", but strangely, I
+            was glad this time. From my volleyball experiences, I learned to{' '}
             <strong>
-              appreciate challenges, face discomfort and put in the hard work because I knew I would improve.
+              appreciate challenges, face discomfort, and put in the hard work because I knew I would improve.
             </strong>
           </p>
 
@@ -116,7 +116,7 @@ export default function Index() {
 
           <h3 className="font-recursive-bold mb-2">Teamwork</h3>
           <p className="mb-4">
-            "Self-made" is bullshit. Great people or things are not born alone. A team gathering momentum can achieve
+            "Self-made" is overrated. Great people or things are not born alone. A team gathering momentum can achieve
             what seems impossible. I like this African proverb: "If you want to go fast, go alone. If you want to go
             far, go together".
           </p>
