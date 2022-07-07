@@ -179,7 +179,7 @@ export default function Index() {
               <h2 className="text-xl md:text-2xl font-recursive-bold">Yousign</h2>
             </a>
             <Separator.Root orientation="vertical" className="h-6 w-px bg-gray-500 mx-4" />
-            <p className="text-gray-700 dark:text-slate-50 text-xs md:text-base pt-1">July 2020 - Present</p>
+            <p className="text-gray-700 dark:text-slate-50 text-xs md:text-base pt-1">July 2021 - July 2022</p>
           </div>
           <div className="w-full overflow-hidden md:max-w-xs mx-auto">
             <img className="object-contain w-full h-20" src="/assets/yousign_logo.png" alt="Yousign logo" />
@@ -207,7 +207,7 @@ export default function Index() {
               <h2 className="text-xl md:text-2xl font-recursive-bold">Le&nbsp;Monde</h2>
             </a>
             <Separator.Root orientation="vertical" className="h-6 w-px bg-gray-500 mx-4" />
-            <p className="text-gray-700 dark:text-slate-50 text-xs md:text-base pt-1">October 2018 - June 2020</p>
+            <p className="text-gray-700 dark:text-slate-50 text-xs md:text-base pt-1">October 2018 - June 2021</p>
           </div>
           <div className="w-full overflow-hidden md:max-w-xs mx-auto dark:bg-white">
             <img className="object-contain w-full h-20" src="/assets/lemonde_logo.jpg" alt="Le Monde logo" />
