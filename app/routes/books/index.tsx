@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from 'remix';
+import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 
 import { ROUTES } from '~/routes';
@@ -8,6 +8,7 @@ import { LinkExternal } from '~/components/LinkExternal';
 
 import { fetchBooksDatabase } from '~/notion-api/books';
 import { BooksData } from '~/types/notion/books';
+import { LinkInternal } from '~/components/LinkInternal';
 
 export const loader: LoaderFunction = async () => {
   const booksDatabaseQueryResponse = await fetchBooksDatabase();
@@ -71,9 +72,9 @@ export default function Books() {
         </p>
         <p className="mt-4">
           I made a{' '}
-          <Link to={`${ROUTES.blog}/my-book-notes-173154c2-e742-4fb2-9739-a7d254ad0e41`} className="text-blue-500">
+          <LinkInternal to={`${ROUTES.blog}/my-book-notes-173154c2-e742-4fb2-9739-a7d254ad0e41`}>
             blog post
-          </Link>{' '}
+          </LinkInternal>{' '}
           to explain why and how I make my book notes.
         </p>
       </div>
