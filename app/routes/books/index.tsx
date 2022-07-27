@@ -1,4 +1,4 @@
-import { useLoaderData } from 'remix';
+import { useLoaderData, Link } from 'remix';
 import type { LoaderFunction } from 'remix';
 
 import { ROUTES } from '~/routes';
@@ -68,6 +68,13 @@ export default function Books() {
           review them once in a while. I'm sharing them publicly as it may be helpful to someone. But{' '}
           <strong>my notes are not a summary of the book.</strong> If you find them interesting, I encourage you to read
           the whole book.
+        </p>
+        <p className="mt-4">
+          I made a{' '}
+          <Link to={`${ROUTES.blog}/my-book-notes-173154c2-e742-4fb2-9739-a7d254ad0e41`} className="text-blue-500">
+            blog post
+          </Link>{' '}
+          to explain why and how I make my book notes.
         </p>
       </div>
 
