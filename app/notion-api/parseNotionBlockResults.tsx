@@ -120,10 +120,31 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponse['result
         buildUnorderedListHtmlTags.push('<ul class="pl-8 -mt-4 flex flex-col gap-2 list-disc">');
       }
 
-      if (block.bulleted_list_item.rich_text[0].type === 'text') {
-        buildUnorderedListHtmlTags.push(
-          `<li><div class="flex gap-2">${block.bulleted_list_item.rich_text[0].text.content}</div></li>`,
-        );
+      const listTextContent = [];
+
+      for (let i = 0; i < block.bulleted_list_item.rich_text.length; i += 1) {
+        const richText = block.bulleted_list_item.rich_text[i];
+        if (richText.type === 'text') {
+          const annotationsClassName = getAnnotationClassName(richText.annotations);
+          const paragraphWithAnnotationsTags = getParagraphWithAnnotationsTags(
+            richText.annotations,
+            richText.text.content,
+          );
+
+          if (annotationsClassName.length > 0) {
+            listTextContent.push(
+              `<span class=${annotationsClassName.join(' ')}>${paragraphWithAnnotationsTags.join('')}</span>`,
+            );
+          } else {
+            paragraphWithAnnotationsTags.length === 1
+              ? listTextContent.push(richText.text.content)
+              : listTextContent.push(paragraphWithAnnotationsTags.join(''));
+          }
+        }
+      }
+
+      if (listTextContent.length > 0) {
+        buildUnorderedListHtmlTags.push(`<li><div class="flex gap-2">${listTextContent.join('')}</div></li>`);
       }
 
       const nextPartialBlock = blockResults[blockIndex + 1];
