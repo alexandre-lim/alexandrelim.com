@@ -144,7 +144,7 @@ function parseNotionBlockResults(blockResults: ListBlockChildrenResponse['result
       }
 
       if (listTextContent.length > 0) {
-        buildUnorderedListHtmlTags.push(`<li><div class="flex gap-2">${listTextContent.join('')}</div></li>`);
+        buildUnorderedListHtmlTags.push(`<li><div>${listTextContent.join('')}</div></li>`);
       }
 
       const nextPartialBlock = blockResults[blockIndex + 1];
